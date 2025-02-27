@@ -21,7 +21,7 @@ Telelian Wiki Page
    docs/jetpack6/setup
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: AVS200:
 
    docs/avs200/interface

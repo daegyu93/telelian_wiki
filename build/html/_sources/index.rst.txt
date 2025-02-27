@@ -9,16 +9,10 @@ Telelian Wiki Page
 
 .. toctree::
    :maxdepth: 1
-   :caption: Jetpack5:
+   :caption: Telelian L4T:
 
-   docs/jetpack5/setup
-
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Jetpack6:
-   
-   docs/jetpack6/setup
+   docs/telelian_l4t/jetpack5
+   docs/telelian_l4t/jetpack6
 
 .. toctree::
    :maxdepth: 1

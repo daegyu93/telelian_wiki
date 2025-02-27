@@ -1,5 +1,5 @@
 (canfd-section)=
-#CANFD 
+# CANFD 
 
 ![canfd](../../_static/canfd.png)
 

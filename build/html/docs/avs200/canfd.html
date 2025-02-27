@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>딥스위치(DIP Switch) &mdash; Telelian Wiki 1.0.0 문서</title>
+  <title>CANFD &mdash; Telelian Wiki 1.0.0 문서</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
@@ -57,9 +57,12 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="interface.html">Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gpio.html">GPIO</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">딥스위치(DIP Switch)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#id1">입력 하이 임계값</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#id2">입력 로우 임계값</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">CANFD</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#dip-switch">딥스위치(DIP Switch)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">입력 하이 임계값</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">입력 로우 임계값</a></li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -76,7 +79,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">딥스위치(DIP Switch)</li>
+      <li class="breadcrumb-item active">CANFD</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/docs/avs200/canfd.md.txt" rel="nofollow"> View page source</a>
       </li>
@@ -86,29 +89,31 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <p id="canfd-section">#CANFD</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="canfd">
+<span id="canfd-section"></span><h1>CANFD<a class="headerlink" href="#canfd" title="Link to this heading"></a></h1>
 <p><img alt="canfd" src="../../_images/canfd.png" /></p>
 <section id="dip-switch">
-<h1>딥스위치(DIP Switch)<a class="headerlink" href="#dip-switch" title="Link to this heading"></a></h1>
+<h2>딥스위치(DIP Switch)<a class="headerlink" href="#dip-switch" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><strong>1번 스위치 ON/OFF</strong>: can0 종단 저항(Termination) ON/OFF</p></li>
 <li><p><strong>2번 스위치 ON/OFF</strong>: can1 종단 저항(Termination) ON/OFF</p></li>
 </ul>
 </section>
 <section id="id1">
-<h1>입력 하이 임계값<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
+<h2>입력 하이 임계값<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><strong>5V 기준</strong>: 3.5V 이상</p></li>
 <li><p><strong>3.3V 기준</strong>: 2.0V 이상</p></li>
 </ul>
 </section>
 <section id="id2">
-<h1>입력 로우 임계값<a class="headerlink" href="#id2" title="Link to this heading"></a></h1>
+<h2>입력 로우 임계값<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><strong>5V 기준</strong>: 1.5V 이하</p></li>
 <li><p><strong>3.3V 기준</strong>: 0.8V 이하</p></li>
 </ul>
 <p>S/W 설정은 <a class="reference internal" href="interface.html#can-interface-section"><span class="std std-ref">인터페이스 안내서의 CAN 섹션</span></a>을 참조하세요.</p>
+</section>
 </section>
 
 

@@ -70,7 +70,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="canfd.html"><a name="canfd-section"></a>CANFD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="canfd.html">CANFD</a></li>
 </ul>
 
         </div>
@@ -107,9 +107,10 @@
 <li><p><strong>1번 스위치 ON</strong>: 5V 입출력</p></li>
 <li><p><strong>2번 스위치 ON</strong>: 3.3V 입출력</p></li>
 </ul>
-<blockquote>
-<div><p><strong>주의</strong>: 절대로 두 스위치를 동시에 ON으로 설정하지 마십시오. 3.3V와 5V가 단락되어 장치가 손상될 수 있습니다.</p>
-</div></blockquote>
+<div class="admonition danger">
+<p class="admonition-title">위험</p>
+<p><strong>주의</strong>: 절대로 두 스위치를 동시에 ON으로 설정하지 마십시오. 3.3V와 5V가 단락되어 장치가 손상될 수 있습니다.</p>
+</div>
 </section>
 <section id="id1">
 <h2>입력 하이 임계값<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
@@ -267,10 +268,10 @@ gpioset<span class="w"> </span>-m<span class="w"> </span>hold<span class="w"> </
 </div>
 </li>
 </ol>
-<blockquote>
-<div><p><strong>참고</strong>: <code class="docutils literal notranslate"><span class="pre">gpioset</span></code> 명령어는 기본적으로 실행 후 핀을 설정하고 종료되면 Low 상태로 돌아갑니다. 이를 방지하려면 <code class="docutils literal notranslate"><span class="pre">-m</span> <span class="pre">hold</span></code> 옵션을 사용하여 설정 상태를 유지할 수 있으며, 이 경우 명령어를 백그라운드에서 실행하거나 별도의 터미널 창에서 작업하는 것이 좋습니다. 자세한 내용은 <code class="docutils literal notranslate"><span class="pre">gpioset</span> <span class="pre">--help</span></code>를 통해 확인할 수 있습니다.</p>
-</div></blockquote>
-<hr class="docutils" />
+<div class="admonition tip">
+<p class="admonition-title">팁</p>
+<p><code class="docutils literal notranslate"><span class="pre">gpioset</span></code> 명령어는 기본적으로 실행 후 핀을 설정하고 종료되면 Low 상태로 돌아갑니다. 이를 방지하려면 <code class="docutils literal notranslate"><span class="pre">-m</span> <span class="pre">hold</span></code> 옵션을 사용하여 설정 상태를 유지할 수 있으며, 이 경우 명령어를 백그라운드에서 실행하거나 별도의 터미널 창에서 작업하는 것이 좋습니다. 자세한 내용은 <code class="docutils literal notranslate"><span class="pre">gpioset</span> <span class="pre">--help</span></code>를 통해 확인할 수 있습니다.</p>
+</div>
 <p>이 가이드를 통해 JetPack 5와 JetPack 6에서 GPIO를 설정하고 제어하는 방법을 익힐 수 있습니다. 각 버전에 맞는 방법을 사용하여 GPIO를 효과적으로 관리하시기 바랍니다.</p>
 </section>
 </section>

@@ -1,0 +1,294 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ko" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Setup telelian l4t &mdash; Telelian Wiki 1.0.0 문서</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=5a0dd2f0"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=f281be69"></script>
+      <script src="../../_static/translations.js?v=afa94a99"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="색인" href="../../genindex.html" />
+    <link rel="search" title="검색" href="../../search.html" />
+    <link rel="next" title="setup telelian l4t" href="../jetpack6/setup.html" />
+    <link rel="prev" title="Telelian Wiki Page" href="../../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Telelian Wiki
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Jetpack5:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Setup telelian l4t</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#setup">setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#build">build</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#flash">flash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#target-device-avs200">target device (avs200) 설정</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">최초 부팅 후 설정</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#jetpack">jetpack 설치</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#jtop">jtop 설치</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#camera">camera 확인</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Jetpack6:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../jetpack6/setup.html">setup telelian l4t</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Telelian Wiki</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Setup telelian l4t</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/jetpack5/setup.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="setup-telelian-l4t">
+<h1>Setup telelian l4t<a class="headerlink" href="#setup-telelian-l4t" title="Link to this heading"></a></h1>
+<section id="setup">
+<h2>setup<a class="headerlink" href="#setup" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>host는 ubuntu 20.04를 사용하세요.</p></li>
+<li><p>주의사항</p>
+<ul>
+<li><p>setup.sh를 실행하기 전에 설치해야 할 패키지가 있습니다.</p></li>
+<li><p>권한문제로 인해 ./setup.sh를 sudo로 실행하면 안되며 실행이후 중간에 한번 root password를 입력해야 합니다.</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>git-core<span class="w"> </span>build-essential<span class="w"> </span>libncurses5-dev<span class="w"> </span>bc<span class="w"> </span>bison<span class="w"> </span>flex<span class="w"> </span>libssl-dev<span class="w"> </span>fakeroot<span class="w"> </span>device-tree-compiler
+./setup.sh
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>setup.sh의 실행이 완료되면 아래의 패키지가 준비됩니다.</p>
+<ol class="arabic simple">
+<li><p>jetson Linux_for_Tegra</p>
+<ul>
+<li><p>l4t kernel/dtb sources</p></li>
+<li><p>avs200에 필요한 flashing 관련 tools</p></li>
+</ul>
+</li>
+<li><p>L4T rootfs</p>
+<ul>
+<li><p>dtb overlay를 위한 tool</p></li>
+</ul>
+</li>
+<li><p>telelian avs200 관련 source</p>
+<ul>
+<li><p>gmsl driver</p></li>
+<li><p>camera driver</p></li>
+<li><p>avs200 device tree</p></li>
+<li><p>camera device tree</p></li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</section>
+<section id="build">
+<h2>build<a class="headerlink" href="#build" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Linux for Tegra의 source의 기본 폴더는 $HOME/l4t_ws/Linux_for_Tegra/sources에 위치합니다.</p></li>
+<li><p>build와 install을 위한 명령어는 아래와 같습니다.</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span><span class="nv">$HOME</span>/l4t_ws/Linux_for_Tegra/sources
+
+<span class="c1"># 전체 build</span>
+./maketegra
+
+<span class="c1"># dtb만 build</span>
+./maketegra<span class="w"> </span>dtbs
+
+<span class="c1"># dtb를 flash하기 위한 위치로 복사</span>
+sudo<span class="w"> </span>./cpdtb
+
+<span class="c1"># kernel만 build</span>
+./maketegra<span class="w"> </span>Image
+
+<span class="c1"># image를 flash하기 위한 위치로 복사</span>
+./cpkernel
+
+<span class="c1"># module만 build</span>
+./maketegra<span class="w"> </span>modules
+
+<span class="c1"># module을 rootfs로 복사</span>
+sudo<span class="w"> </span>./maketegra<span class="w"> </span>modules_install
+</pre></div>
+</div>
+</section>
+<section id="flash">
+<h2>flash<a class="headerlink" href="#flash" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>flash를 위한 기본 폴더는 아래와 같습니다.</p>
+<ul>
+<li><p>$HOME/l4t_ws/Linux_for_Tegra/</p></li>
+</ul>
+</li>
+<li><p>flash를 위한 명령어는 아래와 같습니다.</p></li>
+<li><p>flash를 위해서는 host와 target을 연결하고 target을 recovery mode로 진입시켜야 합니다.</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span><span class="nv">$HOME</span>/l4t_ws/Linux_for_Tegra/
+
+sudo<span class="w"> </span>./flash_agx_orin_nvme.sh
+</pre></div>
+</div>
+</section>
+<section id="target-device-avs200">
+<h2>target device (avs200) 설정<a class="headerlink" href="#target-device-avs200" title="Link to this heading"></a></h2>
+<section id="id1">
+<h3>최초 부팅 후 설정<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<ul>
+<li><p>avs200을 booting한 후 터미널에서 설정합니다.</p></li>
+<li><p>camera overlay 설정</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/boot
+sudo<span class="w"> </span>./makeoverlay_rootfs
+sudo<span class="w"> </span>reboot
+</pre></div>
+</div>
+</li>
+<li><p>nvpmodel 설정</p>
+<ul class="simple">
+<li><p>orin의 성능 설정을 최대로 설정합니다.</p></li>
+<li><p>설정 후 yes를 입력하면 재부팅됩니다.</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>nvpmodel<span class="w"> </span>-m<span class="w"> </span><span class="m">0</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="jetpack">
+<h3>jetpack 설치<a class="headerlink" href="#jetpack" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>nvidia-jetpack
+</pre></div>
+</div>
+</section>
+<section id="jtop">
+<h3>jtop 설치<a class="headerlink" href="#jtop" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3-pip
+sudo<span class="w"> </span>-H<span class="w"> </span>pip3<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>jetson-stats
+sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>jtop
+</pre></div>
+</div>
+</section>
+<section id="camera">
+<h3>camera 확인<a class="headerlink" href="#camera" title="Link to this heading"></a></h3>
+<ul>
+<li><p>camera overlay가 설정되어 있어야 합니다.</p></li>
+<li><p>preview</p>
+<ul class="simple">
+<li><p>device=/dev/video 뒤의 숫자는 camera의 번호입니다.</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">DISPLAY</span><span class="o">=</span>:0
+
+gst-launch-1.0<span class="w"> </span><span class="se">\</span>
+nvv4l2camerasrc<span class="w"> </span><span class="nv">device</span><span class="o">=</span>/dev/video0<span class="w"> </span><span class="se">\</span>
+!<span class="w"> </span><span class="s2">&quot;video/x-raw(memory:NVMM),format=(string)UYVY,width=(int)3840,height=(int)2160,framerate=(fraction)30/1&quot;</span><span class="w"> </span><span class="se">\</span>
+!<span class="w"> </span>nvvidconv<span class="w"> </span><span class="se">\</span>
+!<span class="w"> </span><span class="s2">&quot;video/x-raw(memory:NVMM),format=(string)NV12&quot;</span><span class="w"> </span><span class="se">\</span>
+!<span class="w"> </span>nv3dsink<span class="w"> </span><span class="nv">sync</span><span class="o">=</span><span class="nb">false</span><span class="w"> </span>-e
+</pre></div>
+</div>
+</li>
+<li><p>jpeg capture</p>
+<ul class="simple">
+<li><p>filesink location=test.jpg 뒤의 test.jpg외의 파일명을 입력하면 해당 파일명으로 저장됩니다.</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">DISPLAY</span><span class="o">=</span>:0
+
+gst-launch-1.0<span class="w"> </span><span class="se">\</span>
+nvv4l2camerasrc<span class="w"> </span><span class="nv">device</span><span class="o">=</span>/dev/video0<span class="w"> </span>num-buffers<span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+!<span class="w"> </span><span class="s2">&quot;video/x-raw(memory:NVMM),format=(string)UYVY,width=(int)3840,height=(int)2160,framerate=(fraction)30/1&quot;</span><span class="w"> </span><span class="se">\</span>
+!<span class="w"> </span>nvvidconv<span class="w"> </span><span class="se">\</span>
+!<span class="w"> </span><span class="s2">&quot;video/x-raw(memory:NVMM),format=(string)NV12&quot;</span><span class="w"> </span><span class="se">\</span>
+!<span class="w"> </span>nvjpegenc<span class="w"> </span><span class="se">\</span>
+!<span class="w"> </span>filesink<span class="w"> </span><span class="nv">location</span><span class="o">=</span>test.jpg
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../../index.html" class="btn btn-neutral float-left" title="Telelian Wiki Page" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../jetpack6/setup.html" class="btn btn-neutral float-right" title="setup telelian l4t" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, dghwang.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

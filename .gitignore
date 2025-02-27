@@ -8,7 +8,6 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-build/*
 develop-eggs/
 dist/
 downloads/
@@ -27,4 +26,3 @@ share/python-wheels/
 MANIFEST
 
 # Sphinx build directory
-build/

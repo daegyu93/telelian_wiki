@@ -1,12 +1,12 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="ko" data-content_root="../../">
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Interface &mdash; Telelian Wiki 1.0.0 문서</title>
+  <title>Interface &mdash; Telelian Wiki 1.1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
@@ -14,17 +14,16 @@
   
       <script src="../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../../_static/documentation_options.js?v=5a0dd2f0"></script>
+      <script src="../../_static/documentation_options.js?v=fc837d61"></script>
       <script src="../../_static/doctools.js?v=9bcbadda"></script>
       <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../_static/copybutton.js?v=f281be69"></script>
-      <script src="../../_static/translations.js?v=afa94a99"></script>
     <script src="../../_static/js/theme.js"></script>
-    <link rel="index" title="색인" href="../../genindex.html" />
-    <link rel="search" title="검색" href="../../search.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="GPIO" href="gpio.html" />
-    <link rel="prev" title="setup telelian l4t" href="../jetpack6/setup.html" /> 
+    <link rel="prev" title="Setup telelian l4t" href="../jetpack6/setup.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -52,7 +51,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Jetpack6:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../jetpack6/setup.html">setup telelian l4t</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jetpack6/setup.html">Setup telelian l4t</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">AVS200:</span></p>
 <ul class="current">
@@ -115,7 +114,7 @@
 <li><p><strong>디바이스 경로</strong>: <code class="docutils literal notranslate"><span class="pre">/dev/ttyAMA0</span></code></p></li>
 </ul>
 <div class="admonition warning">
-<p class="admonition-title">경고</p>
+<p class="admonition-title">Warning</p>
 <p>현재 기본 설정으로 <code class="docutils literal notranslate"><span class="pre">/dev/ttyAMA0</span></code>가 디버그 UART로 지정되어 있어, 설정을 변경하지 않으면 디버그 메시지가 출력됩니다. 일반 UART로 사용하려면 <code class="docutils literal notranslate"><span class="pre">extlinux.conf</span></code> 파일을 수정해야 합니다.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>vim<span class="w"> </span>/boot/extlinux/extlinux.conf
 <span class="c1"># APPEND 라인에서 &quot;console=ttyAMA0,115200&quot; 구문 제거</span>
@@ -127,7 +126,7 @@
 <section id="lan">
 <h2>LAN<a class="headerlink" href="#lan" title="Link to this heading"></a></h2>
 <div class="admonition warning">
-<p class="admonition-title">경고</p>
+<p class="admonition-title">Warning</p>
 <p>LAN LED가 비정상적으로 동작하며, LAN2의 MAC 주소가 재부팅 시마다 변경되는 문제가 있습니다. 이를 해결하려면 아래 링크의 스크립트를 다운로드하여 설치해야 합니다.</p>
 <p><a class="reference external" href="https://gitlab.com/telelian-jetpack/util/avs200_eth_conf">avs200_eth_conf</a></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://gitlab.com/telelian-jetpack/util/avs200_eth_conf.git
@@ -184,7 +183,7 @@ sudo<span class="w"> </span>ip<span class="w"> </span>link<span class="w"> </spa
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../jetpack6/setup.html" class="btn btn-neutral float-left" title="setup telelian l4t" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../jetpack6/setup.html" class="btn btn-neutral float-left" title="Setup telelian l4t" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="gpio.html" class="btn btn-neutral float-right" title="GPIO" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

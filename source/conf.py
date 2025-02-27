@@ -14,6 +14,11 @@ extensions = [
     'sphinx_copybutton',  # 복사 버튼 추가
 ]
 
+source_suffix = {
+    '.rst': 'restructuredtext',
+    '.md': 'markdown',
+}
+
 templates_path = ['_templates']
 exclude_patterns = []
 
@@ -37,5 +42,5 @@ myst_enable_extensions = [
 # -- 기타 설정 ---------------------------------------------------------
 # 자동으로 모듈 이름을 문서에 추가하지 않으려면 다음과 같이 설정할 수 있습니다.
 add_module_names = False
-
+myst_heading_anchors = 3
 # 필요에 따라 추가 설정을 여기에 작성하세요.

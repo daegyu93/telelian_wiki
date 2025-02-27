@@ -1,0 +1,310 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ko" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GPIO &mdash; Telelian Wiki 1.0.0 문서</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=5a0dd2f0"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=f281be69"></script>
+      <script src="../../_static/translations.js?v=afa94a99"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="색인" href="../../genindex.html" />
+    <link rel="search" title="검색" href="../../search.html" />
+    <link rel="next" title="CANFD" href="canfd.html" />
+    <link rel="prev" title="Interface" href="interface.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Telelian Wiki
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Jetpack5:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../jetpack5/setup.html">Setup telelian l4t</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Jetpack6:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../jetpack6/setup.html">setup telelian l4t</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">AVS200:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="interface.html">Interface</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">GPIO</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#dip-switch">딥스위치(DIP Switch)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">입력 하이 임계값</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">출력 최대 전류</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">GPIO 핀 번호 매핑</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mux">멀티플렉서(Mux) 설정</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">GPIO 설정 및 제어 가이드</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#jetpack-5-gpio">JetPack 5에서의 GPIO 설정 및 제어</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#jetpack-6-gpio">JetPack 6에서의 GPIO 설정 및 제어</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="canfd.html"><a name="canfd-section"></a>CANFD</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Telelian Wiki</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">GPIO</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/avs200/gpio.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="gpio">
+<h1>GPIO<a class="headerlink" href="#gpio" title="Link to this heading"></a></h1>
+<p><img alt="digital_io" src="../../_images/digital_io.png" /></p>
+<section id="dip-switch">
+<h2>딥스위치(DIP Switch)<a class="headerlink" href="#dip-switch" title="Link to this heading"></a></h2>
+<p>위 사진의 딥스위치는 GPIO 전압을 설정하는 핀입니다.</p>
+<ul class="simple">
+<li><p><strong>1번 스위치 ON</strong>: 5V 입출력</p></li>
+<li><p><strong>2번 스위치 ON</strong>: 3.3V 입출력</p></li>
+</ul>
+<blockquote>
+<div><p><strong>주의</strong>: 절대로 두 스위치를 동시에 ON으로 설정하지 마십시오. 3.3V와 5V가 단락되어 장치가 손상될 수 있습니다.</p>
+</div></blockquote>
+</section>
+<section id="id1">
+<h2>입력 하이 임계값<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>5V 기준</strong>: 3.5V 이상</p></li>
+<li><p><strong>3.3V 기준</strong>: 2.0V 이상</p></li>
+</ul>
+</section>
+<section id="id2">
+<h2>출력 최대 전류<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>20mA</strong></p></li>
+</ul>
+</section>
+<section id="id3">
+<h2>GPIO 핀 번호 매핑<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>GPIO</p></th>
+<th class="head"><p>핀 번호</p></th>
+<th class="head"><p>GPIO 칩</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>DOUT0</p></td>
+<td><p>PCC.02</p></td>
+<td><p>gpiochip1 14</p></td>
+</tr>
+<tr class="row-odd"><td><p>DOUT1</p></td>
+<td><p>PCC.03</p></td>
+<td><p>gpiochip1 15</p></td>
+</tr>
+<tr class="row-even"><td><p>DIN0</p></td>
+<td><p>PAA.04</p></td>
+<td><p>gpiochip1 4</p></td>
+</tr>
+<tr class="row-odd"><td><p>DIN1</p></td>
+<td><p>PAA.07</p></td>
+<td><p>gpiochip1 7</p></td>
+</tr>
+<tr class="row-even"><td><p>EXT_SEL</p></td>
+<td><p>PBB.01</p></td>
+<td><p>gpiochip1 9</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="mux">
+<h2>멀티플렉서(Mux) 설정<a class="headerlink" href="#mux" title="Link to this heading"></a></h2>
+<p>EXT_SEL 설정을 통해 DIN0와 DOUT0를 GPIO 또는 카메라 프레임 동기화(FrameSync)로 사용할 수 있습니다.</p>
+<ul class="simple">
+<li><p><strong>EXT_SEL = 1</strong>:</p>
+<ul>
+<li><p>DIN0: GPIO</p></li>
+<li><p>DOUT0: GPIO</p></li>
+</ul>
+</li>
+<li><p><strong>EXT_SEL = 0</strong>:</p>
+<ul>
+<li><p>DIN0: 카메라 프레임 동기화 입력</p></li>
+<li><p>DOUT0: 카메라 프레임 동기화 출력 (입력 신호를 그대로 전달)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id4">
+<h2>GPIO 설정 및 제어 가이드<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<p>JetPack 버전에 따라 GPIO를 설정하고 제어하는 방법이 다릅니다. 아래는 JetPack 5와 JetPack 6에서의 GPIO 사용 방법을 정리한 가이드입니다.</p>
+<section id="jetpack-5-gpio">
+<h3>JetPack 5에서의 GPIO 설정 및 제어<a class="headerlink" href="#jetpack-5-gpio" title="Link to this heading"></a></h3>
+<p>JetPack 5에서는 <code class="docutils literal notranslate"><span class="pre">/sys/class/gpio</span></code> 인터페이스를 통해 GPIO를 제어합니다. 다음은 GPIO를 활성화하고 방향을 설정하는 방법입니다.</p>
+<ol class="arabic">
+<li><p><strong>GPIO 활성화</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="m">330</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/class/gpio/export
+<span class="nb">echo</span><span class="w"> </span><span class="m">331</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/class/gpio/export
+<span class="nb">echo</span><span class="w"> </span><span class="m">320</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/class/gpio/export
+<span class="nb">echo</span><span class="w"> </span><span class="m">323</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/class/gpio/export
+<span class="nb">echo</span><span class="w"> </span><span class="m">325</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/class/gpio/export
+</pre></div>
+</div>
+</li>
+<li><p><strong>GPIO 방향 설정</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span>out<span class="w"> </span>&gt;<span class="w"> </span>/sys/class/gpio/gpio330/direction<span class="w">  </span><span class="c1"># DOUT0: 출력</span>
+<span class="nb">echo</span><span class="w"> </span>out<span class="w"> </span>&gt;<span class="w"> </span>/sys/class/gpio/gpio331/direction<span class="w">  </span><span class="c1"># DOUT1: 출력</span>
+<span class="nb">echo</span><span class="w"> </span><span class="k">in</span><span class="w">  </span>&gt;<span class="w"> </span>/sys/class/gpio/gpio320/direction<span class="w">  </span><span class="c1"># DIN0: 입력</span>
+<span class="nb">echo</span><span class="w"> </span><span class="k">in</span><span class="w">  </span>&gt;<span class="w"> </span>/sys/class/gpio/gpio323/direction<span class="w">  </span><span class="c1"># DIN1: 입력</span>
+<span class="nb">echo</span><span class="w"> </span>out<span class="w"> </span>&gt;<span class="w"> </span>/sys/class/gpio/gpio325/direction<span class="w">  </span><span class="c1"># EXT_SEL: 출력</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>GPIO 값 설정 및 읽기</strong>:</p>
+<ul>
+<li><p><strong>DOUT0 설정</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/class/gpio/gpio330/value<span class="w">  </span><span class="c1"># High</span>
+<span class="nb">echo</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/class/gpio/gpio330/value<span class="w">  </span><span class="c1"># Low</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>DOUT1 설정</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/class/gpio/gpio331/value<span class="w">  </span><span class="c1"># High</span>
+<span class="nb">echo</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/class/gpio/gpio331/value<span class="w">  </span><span class="c1"># Low</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>DIN0 값 읽기</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>/sys/class/gpio/gpio320/value
+</pre></div>
+</div>
+</li>
+<li><p><strong>DIN1 값 읽기</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>/sys/class/gpio/gpio323/value
+</pre></div>
+</div>
+</li>
+<li><p><strong>EXT_SEL 설정</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/class/gpio/gpio325/value<span class="w">  </span><span class="c1"># High</span>
+<span class="nb">echo</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/class/gpio/gpio325/value<span class="w">  </span><span class="c1"># Low</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="jetpack-6-gpio">
+<h3>JetPack 6에서의 GPIO 설정 및 제어<a class="headerlink" href="#jetpack-6-gpio" title="Link to this heading"></a></h3>
+<p>JetPack 6에서는 <code class="docutils literal notranslate"><span class="pre">libgpiod</span></code> 유틸리티를 사용하여 GPIO를 제어합니다. <code class="docutils literal notranslate"><span class="pre">gpioset</span></code>과 <code class="docutils literal notranslate"><span class="pre">gpioget</span></code> 명령어를 사용하여 GPIO의 값을 설정하거나 읽을 수 있습니다.</p>
+<ol class="arabic">
+<li><p><strong>DOUT0 설정</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gpioset<span class="w"> </span>-m<span class="w"> </span>hold<span class="w"> </span>gpiochip1<span class="w"> </span><span class="nv">14</span><span class="o">=</span><span class="m">1</span><span class="w">  </span><span class="c1"># High</span>
+gpioset<span class="w"> </span>-m<span class="w"> </span>hold<span class="w"> </span>gpiochip1<span class="w"> </span><span class="nv">14</span><span class="o">=</span><span class="m">0</span><span class="w">  </span><span class="c1"># Low</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>DOUT1 설정</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gpioset<span class="w"> </span>-m<span class="w"> </span>hold<span class="w"> </span>gpiochip1<span class="w"> </span><span class="nv">15</span><span class="o">=</span><span class="m">1</span><span class="w">  </span><span class="c1"># High</span>
+gpioset<span class="w"> </span>-m<span class="w"> </span>hold<span class="w"> </span>gpiochip1<span class="w"> </span><span class="nv">15</span><span class="o">=</span><span class="m">0</span><span class="w">  </span><span class="c1"># Low</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>DIN0 값 읽기</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gpioget<span class="w"> </span>gpiochip1<span class="w"> </span><span class="m">4</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>DIN1 값 읽기</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gpioget<span class="w"> </span>gpiochip1<span class="w"> </span><span class="m">7</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>EXT_SEL 설정</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gpioset<span class="w"> </span>-m<span class="w"> </span>hold<span class="w"> </span>gpiochip1<span class="w"> </span><span class="nv">9</span><span class="o">=</span><span class="m">1</span><span class="w">  </span><span class="c1"># High</span>
+gpioset<span class="w"> </span>-m<span class="w"> </span>hold<span class="w"> </span>gpiochip1<span class="w"> </span><span class="nv">9</span><span class="o">=</span><span class="m">0</span><span class="w">  </span><span class="c1"># Low</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<blockquote>
+<div><p><strong>참고</strong>: <code class="docutils literal notranslate"><span class="pre">gpioset</span></code> 명령어는 기본적으로 실행 후 핀을 설정하고 종료되면 Low 상태로 돌아갑니다. 이를 방지하려면 <code class="docutils literal notranslate"><span class="pre">-m</span> <span class="pre">hold</span></code> 옵션을 사용하여 설정 상태를 유지할 수 있으며, 이 경우 명령어를 백그라운드에서 실행하거나 별도의 터미널 창에서 작업하는 것이 좋습니다. 자세한 내용은 <code class="docutils literal notranslate"><span class="pre">gpioset</span> <span class="pre">--help</span></code>를 통해 확인할 수 있습니다.</p>
+</div></blockquote>
+<hr class="docutils" />
+<p>이 가이드를 통해 JetPack 5와 JetPack 6에서 GPIO를 설정하고 제어하는 방법을 익힐 수 있습니다. 각 버전에 맞는 방법을 사용하여 GPIO를 효과적으로 관리하시기 바랍니다.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="interface.html" class="btn btn-neutral float-left" title="Interface" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="canfd.html" class="btn btn-neutral float-right" title="CANFD" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, dghwang.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

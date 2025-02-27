@@ -1,6 +1,6 @@
-# Telelian L4T 설정 가이드
+# Jetpack 5
 
-## 설정
+## Setup
 
 1. **호스트 시스템 준비**:
    - Ubuntu 20.04를 사용하십시오.
@@ -31,7 +31,7 @@
      - AVS200 디바이스 트리
      - 카메라 디바이스 트리
 
-## 빌드
+## Build
 
 1. **소스 디렉토리 위치**:
    - 기본 경로: `$HOME/l4t_ws/Linux_for_Tegra/sources`
@@ -63,7 +63,7 @@
    sudo ./maketegra modules_install
    ```
 
-## 플래싱
+## Flashing
 
 1. **플래싱 디렉토리 위치**:
    - 기본 경로: `$HOME/l4t_ws/Linux_for_Tegra/`
@@ -78,7 +78,7 @@
    sudo ./flash_agx_orin_nvme.sh
    ```
 
-## 타겟 디바이스(AVS200) 설정
+## Target device setup
 
 ### 최초 부팅 후 설정
 

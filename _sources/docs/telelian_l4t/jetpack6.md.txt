@@ -1,6 +1,6 @@
-# Telelian L4T 설정 가이드
+# Jetpack 6
 
-## 설정
+## Setup
 
 1. **호스트 시스템 준비**:
    - Ubuntu 20.04 또는 22.04를 사용하십시오.
@@ -40,7 +40,7 @@
    ./build-setup.sh
    ```
 
-## 빌드
+## Build
 
 1. **빌드 및 설치 명령어**:
    ```bash
@@ -80,7 +80,7 @@
    sudo ./maketegra telelian-cam modules_install
    ```
 
-## 루트 파일 시스템 생성
+## Create root filesystem
 
 1. **루트 파일 시스템에 필요한 파일 복사**:
    - 빌드 후 `cpdtb`, `cpkernel`, `kernel_install`, `modules_install`, `telelian-cam modules_install`을 실행하여 필요한 파일들을 rootfs에 복사합니다.
@@ -92,7 +92,7 @@
    sudo ./tools/l4t_create_default_user.sh -u <username> -p <password> -n <hostname> -a --accept-license
    ```
 
-## 플래시
+## Flashing
 
 1. **플래시를 위한 기본 폴더**:
    - `Linux_for_Tegra/`
@@ -109,7 +109,7 @@
    sudo ./flash_agx_orin_nvme.sh
    ```
 
-## 타겟 디바이스(AVS200) 설정
+## Target device setup
 
 ### 최초 부팅 후 설정
 

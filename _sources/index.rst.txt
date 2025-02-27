@@ -19,3 +19,11 @@ Telelian Wiki Page
    :caption: Jetpack6:
    
    docs/jetpack6/setup
+
+.. toctree::
+   :maxdepth: 2
+   :caption: AVS200:
+
+   docs/avs200/interface
+   docs/avs200/gpio
+   docs/avs200/canfd

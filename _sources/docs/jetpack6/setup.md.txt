@@ -1,4 +1,4 @@
-# setup telelian l4t
+# Setup telelian l4t
 
 ## setup
 - host는 ubuntu 20.04 또는 22.04를 사용하세요.

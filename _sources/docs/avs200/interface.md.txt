@@ -12,6 +12,7 @@
 
 - **디바이스 경로**: `/dev/ttyAMA0`
 
+```{warning}
 현재 기본 설정으로 `/dev/ttyAMA0`가 디버그 UART로 지정되어 있어, 설정을 변경하지 않으면 디버그 메시지가 출력됩니다. 일반 UART로 사용하려면 `extlinux.conf` 파일을 수정해야 합니다.
 
 ```bash
@@ -20,7 +21,7 @@ sudo vim /boot/extlinux/extlinux.conf
 ```
 
 ## LAN
-
+```{warning}
 LAN LED가 비정상적으로 동작하며, LAN2의 MAC 주소가 재부팅 시마다 변경되는 문제가 있습니다. 이를 해결하려면 아래 링크의 스크립트를 다운로드하여 설치해야 합니다.
 
 [avs200_eth_conf](https://gitlab.com/telelian-jetpack/util/avs200_eth_conf)
@@ -31,10 +32,11 @@ cd avs200_eth_conf
 ./install.sh
 ```
 
-(can-interface-section)=
-CAN
 
-CAN 포트의 하드웨어 설정은 제조사의 공식 문서를 참고하시기 바랍니다.
+(can-interface-section)=
+## CAN
+
+CAN 포트의 하드웨어 설정은 [CANFD 섹션](canfd.md#canfd-section) 를 참조하세요
 
 부팅 시 `mttcan` 모듈이 로드되지 않으므로 수동으로 로드해야 합니다.
 
@@ -75,5 +77,3 @@ FD 모드를 사용하지 않을 경우, `dbitrate` 설정은 필요하지 않�
 ```bash
 sudo ip link set can0 up type can bitrate 500000
 ```
-
-H/W configuration은 [CANFD 섹션](canfd.md#canfd-section)

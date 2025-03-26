@@ -23,7 +23,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="frame sync pwm 설정" href="framesync.html" />
-    <link rel="prev" title="CANFD" href="../avs200/canfd.html" /> 
+    <link rel="prev" title="Camera overlay" href="overlay.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -45,21 +45,87 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Telelian L4T:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Setup Jetpack:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../telelian_l4t/jetpack5.html">Jetpack 5</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../telelian_l4t/jetpack6.html">Jetpack 6</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../telelian_l4t/jetpack6.html">Jetpack 6</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../telelian_l4t/jetpack6.html#setup-telelian-linux-for-tegra">setup telelian Linux for Tegra</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../telelian_l4t/jetpack6.html#setup">setup</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">AVS200:</span></p>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../telelian_l4t/jetpack6.html#flash-to-target">flash to target</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../telelian_l4t/jetpack6.html#avs100">avs100</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../telelian_l4t/jetpack6.html#avs101">avs101</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../telelian_l4t/jetpack6.html#avs200">avs200</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../telelian_l4t/jetpack6.html#flash">flash</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../telelian_l4t/jetpack6.html#target-device">target device 설정</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../telelian_l4t/jetpack6.html#jtop">jtop 설치</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../telelian_l4t/jetpack6.html#nvidia-l4t-gstreamer">nvidia-l4t-gstreamer 설치</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../telelian_l4t/jetpack6.html#nvidia-jetpack">nvidia-jetpack 설치</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../telelian_l4t/jetpack6.html#build-telelian-l4t">Build Telelian l4t</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../telelian_l4t/jetpack6.html#id6">문의</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IO:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../avs200/interface.html">Interface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../avs200/gpio.html">GPIO</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../avs200/canfd.html">CANFD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../io/avs200.html">avs200</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../io/avs200-io/canfd.html">CANFD</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../io/avs200-io/canfd.html#dip-switch">딥스위치(DIP Switch)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../io/avs200-io/canfd.html#id1">입력 하이 임계값</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../io/avs200-io/canfd.html#id2">입력 로우 임계값</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../io/avs200-io/gpio.html">GPIO</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../io/avs200-io/gpio.html#dip-switch">딥스위치(DIP Switch)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../io/avs200-io/gpio.html#id1">입력 하이 임계값</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../io/avs200-io/gpio.html#id2">출력 최대 전류</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../io/avs200-io/gpio.html#id3">GPIO 핀 번호 매핑</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../io/avs200-io/gpio.html#mux">멀티플렉서(Mux) 설정</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../io/avs200-io/gpio.html#id4">GPIO 설정 및 제어 가이드</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../io/avs200-io/interface.html">Interface</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../io/avs200-io/interface.html#uart">UART</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../io/avs200-io/interface.html#lan">LAN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../io/avs200-io/interface.html#can">CAN</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Camera:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">gstreamer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="framesync.html">frame sync pwm 설정</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overlay.html">Camera overlay</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="overlay.html#jetson-orin-system">Jetson Orin System</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="overlay.html#avs100-avs200">AVS100, AVS200</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overlay.html#avs101">AVS101</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="overlay.html#camera">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overlay.html#setup-camera-overlay">Setup Camera Overlay</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="overlay.html#run">run</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">gstreamer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#preview">preview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#jpeg-capture">jpeg capture</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="framesync.html">frame sync pwm 설정</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="framesync.html#avs100">avs100</a></li>
+<li class="toctree-l2"><a class="reference internal" href="framesync.html#avs101">avs101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="framesync.html#avs200">avs200</a></li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -88,9 +154,11 @@
              
   <section class="tex2jax_ignore mathjax_ignore" id="gstreamer">
 <h1>gstreamer<a class="headerlink" href="#gstreamer" title="Link to this heading"></a></h1>
-<ul>
+<ul class="simple">
 <li><p>camera overlay가 설정되어 있어야 합니다.</p></li>
-<li><p>preview</p>
+</ul>
+<section id="preview">
+<h2>preview<a class="headerlink" href="#preview" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>device=/dev/video 뒤의 숫자는 camera의 번호입니다.</p></li>
 </ul>
@@ -106,8 +174,9 @@ nvv4l2camerasrc<span class="w"> </span><span class="nv">device</span><span class
 !<span class="w"> </span>nv3dsink<span class="w"> </span><span class="nv">sync</span><span class="o">=</span><span class="nb">false</span><span class="w"> </span>-e
 </pre></div>
 </div>
-</li>
-<li><p>jpeg capture</p>
+</section>
+<section id="jpeg-capture">
+<h2>jpeg capture<a class="headerlink" href="#jpeg-capture" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>filesink location=test.jpg 뒤의 test.jpg외의 파일명을 입력하면 해당 파일명으로 저장됩니다.</p></li>
 </ul>
@@ -124,22 +193,21 @@ nvv4l2camerasrc<span class="w"> </span><span class="nv">device</span><span class
 !<span class="w"> </span>filesink<span class="w"> </span><span class="nv">location</span><span class="o">=</span>test.jpg
 </pre></div>
 </div>
-</li>
-</ul>
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../avs200/canfd.html" class="btn btn-neutral float-left" title="CANFD" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="overlay.html" class="btn btn-neutral float-left" title="Camera overlay" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="framesync.html" class="btn btn-neutral float-right" title="frame sync pwm 설정" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2025, dghwang.</p>
+    <p>&#169; Copyright 2025, Telelian.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

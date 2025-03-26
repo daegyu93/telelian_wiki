@@ -1,6 +1,6 @@
 # Jetpack 6
 
-## setup telelian l4t 
+## setup telelian Linux for Tegra 
 
 ```{important}
 ## 지원하는 Linux for Tegra version은 아래와 같습니다.
@@ -13,7 +13,14 @@
 ```{warning}
 ## host는 ubuntu 20.04 또는 22.04를 사용하세요.
 ```
+```{danger}
+## apt upgrade, apt dist-upgrade 를 하면 안됩니다.
+- kernel image와 device tree, device driver는 avs100,101,200에 맞게 빌드되어 셋팅되어 있습니다.
+- apt upgrade, apt dist-upgrade를 하게 되면 nvidia Jetson devkit용으로 파일이 덮어써져 부팅이 안됩니다.
+```
 
+(setup-section)=
+### setup
 ```bash
 sudo apt update 
 sudo apt install -y git-core build-essential libncurses5-dev \
@@ -83,12 +90,14 @@ sudo ./make_depmod.sh
 
 ```
 
-## flash
+## flash to target
 
+```{important}
 ### recovery mode
 - Flash 하기 전 Recovery mode로 진입해야 합니다.
 - recovery usb와 Linux_for_Tegra가 설치된 ubuntu PC를 연결합니다.
 - Power on 상태에서 아래 사진에 표시된 recovery button을 누른 상태에서 reset button을 눌렀다 뗀 후 2-3초 후에 recovery button에서 손을 뗍니다.
+```
 
 #### avs100
 ![avs100](../../_static/recovery/avs100.jpg)
@@ -102,10 +111,10 @@ sudo ./make_depmod.sh
 
 
 ### flash
-- flash를 위한 기본 폴더는 아래와 같습니다.
-    - Linux_for_Tegra/
+```{note}
+- 아래 명령어에서 보이는 경로는 위의 [setup](#setup-section)에서 설치된 경로이며 다른 경로를 사용했을 경우 Linux_for_Tegra 아래에서 작업하시면 됩니다.
 - flash를 위한 명령어는 아래와 같습니다.
-
+```
 #### 공통
 ```bash
 L4T_VERSION=36.4.3
@@ -113,6 +122,9 @@ L4T_VERSION=36.4.3
 BASE_PATH=$HOME/l4t_ws/${L4T_VERSION}
 L4T_PATH=$BASE_PATH/Linux_for_Tegra
 cd $L4T_PATH
+
+# host pc 에서 한번만 실행하면 됩니다.
+sudo ./tools/l4t_flash_prerequisites.sh
 
 ```
 #### avs100
@@ -155,39 +167,43 @@ sudo ./flash_avs200_nvme_flash_only.sh
 
 ## target device 설정
 
+```{note}
 ### 최초 부팅 후 설정 
-- target device booting한 후 터미널에서 설정합니다.
+- target device가 부팅된 후 터미널에서 설정합니다.
 - group설정
+    > gpio, i2c 장치들을 non-sudo로 실행하기 위해 설정합니다.
     ```bash
     sudo usermod -aG gpio <user-id>
     sudo usermod -aG i2c <user-id>
-   ```
+    ```
 - nvpmodel 설정
     - orin의 성능 설정을 최대로 설정합니다.
     - 설정 후 yes를 입력하면 재부팅됩니다.
     ```bash
     sudo nvpmodel -m 0
     ```
-
-### gstreamer 설치
-```bash
-sudo apt install -y nvidia-l4t-gstreamer
-```
-
-### jetpack 설치
-```bash
-sudo apt install nvidia-jetpack
 ```
 
 ### jtop 설치
+- device의 상태를 모니터링하기 위해 설치합니다.
 ```bash
 sudo apt install python3-pip
 sudo -H pip3 install -U jetson-stats
 sudo systemctl restart jtop
 ```
 
+### nvidia-l4t-gstreamer 설치
+- jetson의 hardware를 이용하여 camera, encoder, decoder 등을 빠르게 액세스하기 위해 설치합니다.
+```bash
+sudo apt install -y nvidia-l4t-gstreamer
+```
 
-
+### nvidia-jetpack 설치
+- [nvidia-jetpack의 package 구성](https://docs.nvidia.com/jetson/jetpack/install-setup/index.html#id1) 
+- CUDA toolkit, cuDNN, TensorRT, OpenCV, VPI, nvidia container runtime, 등등이 포함된 패키지
+```bash
+sudo apt install nvidia-jetpack
+```
 
 ## Build Telelian l4t
 

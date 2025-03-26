@@ -1,0 +1,524 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Camera overlay &mdash; Telelian Wiki 1.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=fc837d61"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="gstreamer" href="gstreamer.html" />
+    <link rel="prev" title="Interface" href="../io/avs200-io/interface.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Telelian Wiki
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Setup Jetpack:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../telelian_l4t/jetpack5.html">Jetpack 5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../telelian_l4t/jetpack6.html">Jetpack 6</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../telelian_l4t/jetpack6.html#setup-telelian-linux-for-tegra">setup telelian Linux for Tegra</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../telelian_l4t/jetpack6.html#setup">setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../telelian_l4t/jetpack6.html#flash-to-target">flash to target</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../telelian_l4t/jetpack6.html#avs100">avs100</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../telelian_l4t/jetpack6.html#avs101">avs101</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../telelian_l4t/jetpack6.html#avs200">avs200</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../telelian_l4t/jetpack6.html#flash">flash</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../telelian_l4t/jetpack6.html#target-device">target device 설정</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../telelian_l4t/jetpack6.html#jtop">jtop 설치</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../telelian_l4t/jetpack6.html#nvidia-l4t-gstreamer">nvidia-l4t-gstreamer 설치</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../telelian_l4t/jetpack6.html#nvidia-jetpack">nvidia-jetpack 설치</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../telelian_l4t/jetpack6.html#build-telelian-l4t">Build Telelian l4t</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../telelian_l4t/jetpack6.html#id6">문의</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IO:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../io/avs200.html">avs200</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../io/avs200-io/canfd.html">CANFD</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../io/avs200-io/canfd.html#dip-switch">딥스위치(DIP Switch)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../io/avs200-io/canfd.html#id1">입력 하이 임계값</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../io/avs200-io/canfd.html#id2">입력 로우 임계값</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../io/avs200-io/gpio.html">GPIO</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../io/avs200-io/gpio.html#dip-switch">딥스위치(DIP Switch)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../io/avs200-io/gpio.html#id1">입력 하이 임계값</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../io/avs200-io/gpio.html#id2">출력 최대 전류</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../io/avs200-io/gpio.html#id3">GPIO 핀 번호 매핑</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../io/avs200-io/gpio.html#mux">멀티플렉서(Mux) 설정</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../io/avs200-io/gpio.html#id4">GPIO 설정 및 제어 가이드</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../io/avs200-io/interface.html">Interface</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../io/avs200-io/interface.html#uart">UART</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../io/avs200-io/interface.html#lan">LAN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../io/avs200-io/interface.html#can">CAN</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Camera:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Camera overlay</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#jetson-orin-system">Jetson Orin System</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#avs100-avs200">AVS100, AVS200</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#avs101">AVS101</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#camera">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setup-camera-overlay">Setup Camera Overlay</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#run">run</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gstreamer.html">gstreamer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gstreamer.html#preview">preview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gstreamer.html#jpeg-capture">jpeg capture</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="framesync.html">frame sync pwm 설정</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="framesync.html#avs100">avs100</a></li>
+<li class="toctree-l2"><a class="reference internal" href="framesync.html#avs101">avs101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="framesync.html#avs200">avs200</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Telelian Wiki</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Camera overlay</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/camera/overlay.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="camera-overlay">
+<h1>Camera overlay<a class="headerlink" href="#camera-overlay" title="Link to this heading"></a></h1>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<ul class="simple">
+<li><p>avs 시리즈는 다양한 add-on board를 지원합니다.</p></li>
+<li><p>다양한 보드와 카메라를 유연하게 설정하기 위한 안내입니다.</p></li>
+</ul>
+</div>
+<section id="jetson-orin-system">
+<h2>Jetson Orin System<a class="headerlink" href="#jetson-orin-system" title="Link to this heading"></a></h2>
+<section id="avs100-avs200">
+<h3>AVS100, AVS200<a class="headerlink" href="#avs100-avs200" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>avs100과 avs200의 add-on board는 호환됩니다.</p></li>
+<li><p>avs100의 경우 Orin NX, nano의 csi port가 부족하여 4ch까지만 지원합니다.</p></li>
+</ul>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>보드</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>GCAM-R3</p></td>
+<td><p>GMSL 6ch rev3</p></td>
+</tr>
+<tr class="row-odd"><td><p>GCAM-R4</p></td>
+<td><p>GMSL 6ch rev4</p></td>
+</tr>
+<tr class="row-even"><td><p>RGBIR-R1</p></td>
+<td><p>GMSL 6ch + RGB 1ch + IR 1ch</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="avs101">
+<h3>AVS101<a class="headerlink" href="#avs101" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>보드</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>GCAM-R1</p></td>
+<td><p>GMSL 6ch</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="camera">
+<h2>Camera<a class="headerlink" href="#camera" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>제조사</p></th>
+<th class="head"><p>모델명</p></th>
+<th class="head"><p>해상도</p></th>
+<th class="head"><p>이미지 포맷</p></th>
+<th class="head"><p>센서</p></th>
+<th class="head"><p>ISP</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>atech solution</p></td>
+<td><p>acc02ong</p></td>
+<td><p>1920x1080</p></td>
+<td><p>YUV</p></td>
+<td><p>onsemi ar0233</p></td>
+<td><p>geosemi gw5300</p></td>
+</tr>
+<tr class="row-odd"><td><p>sensing-world</p></td>
+<td><p>sg2-imx390c</p></td>
+<td><p>1920x1080</p></td>
+<td><p>YUV</p></td>
+<td><p>sony imx390</p></td>
+<td><p>geosemi gw5300</p></td>
+</tr>
+<tr class="row-even"><td><p>sensing-world</p></td>
+<td><p>sg3s-isx031c</p></td>
+<td><p>1920x1536</p></td>
+<td><p>YUV</p></td>
+<td><p>sony isx031</p></td>
+<td><p>센서 내장</p></td>
+</tr>
+<tr class="row-odd"><td><p>sensing-world</p></td>
+<td><p>sg8-ox08bc</p></td>
+<td><p>3840x2160</p></td>
+<td><p>YUV</p></td>
+<td><p>omnivision ox08b40</p></td>
+<td><p>geosemi gw5300</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="setup-camera-overlay">
+<h2>Setup Camera Overlay<a class="headerlink" href="#setup-camera-overlay" title="Link to this heading"></a></h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<ul>
+<li><p>device tree를 avs, add-on board, camera에 맞게 overlay 설정을 해줘야 카메라가 동작합니다.</p></li>
+<li><p>/boot/makeoverlay_rootfs의 상단의 주석을 조합에 맞게 해제하세요</p>
+<ul>
+<li><p>예를 들어 GCAM-R4를 사용하고 sensing-world의 sg3s-isx031c 카메라를 사용하는 경우 아래와 같이 주석을 해제합니다.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">GCAM_BOARD</span><span class="o">=</span>gcam-r4
+<span class="nv">CAMERA</span><span class="o">=</span>sg3s-isx031c
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<ul class="simple">
+<li><p>/boot/makeoverlay_rootfs</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="c1"># select cam board</span>
+<span class="c1"># GCAM_BOARD=gcam-r3</span>
+<span class="c1"># GCAM_BOARD=gcam-r4</span>
+<span class="c1"># GCAM_BOARD=gcam-rgbir-r1</span>
+<span class="c1"># GCAM_BOARD=gcam-r1</span>
+
+<span class="c1"># select camera</span>
+<span class="c1"># CAMERA=acc02ong</span>
+<span class="c1"># CAMERA=rgbir</span>
+<span class="c1"># CAMERA=sg8-ox08bc-gw5300</span>
+<span class="c1"># CAMERA=sg3s-isx031c</span>
+<span class="c1"># CAMERA=sg2-imx390c-gw5200</span>
+
+<span class="nv">COMPATIBLE</span><span class="o">=</span><span class="k">$(</span>cat<span class="w"> </span>/proc/device-tree/compatible<span class="k">)</span>
+
+<span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$COMPATIBLE</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">==</span><span class="w"> </span>*<span class="s2">&quot;avs101&quot;</span>*<span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nv">TARGET_PREFIX</span><span class="o">=</span>avs101
+<span class="k">elif</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$COMPATIBLE</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">==</span><span class="w"> </span>*<span class="s2">&quot;avs100&quot;</span>*<span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nv">TARGET_PREFIX</span><span class="o">=</span>avs100
+<span class="k">elif</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$COMPATIBLE</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">==</span><span class="w"> </span>*<span class="s2">&quot;avs200&quot;</span>*<span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nv">TARGET_PREFIX</span><span class="o">=</span>avs200
+<span class="k">else</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Error: No target prefix found&quot;</span>
+<span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+<span class="k">fi</span>
+
+<span class="nv">IFS</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="w"> </span><span class="nb">read</span><span class="w"> </span>-ra<span class="w"> </span>DATA<span class="w"> </span><span class="o">&lt;&lt;&lt;</span><span class="w"> </span><span class="k">$(</span>i2ctransfer<span class="w"> </span>-f<span class="w"> </span>-y<span class="w"> </span><span class="m">0</span><span class="w"> </span>w1@0x50<span class="w"> </span><span class="m">0</span><span class="w"> </span>r256<span class="k">)</span>
+
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-z<span class="w"> </span><span class="nv">$DATA</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;can&#39;t access&quot;</span>
+<span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+<span class="k">fi</span>
+
+get_hex_to_dec<span class="o">()</span>
+<span class="o">{</span>
+<span class="w">    </span><span class="nv">array</span><span class="o">=</span><span class="nv">$@</span>
+<span class="w">    </span><span class="nv">result</span><span class="o">=</span><span class="m">0</span>
+<span class="w">    </span><span class="nv">ITER</span><span class="o">=</span><span class="m">0</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="si">${</span><span class="nv">array</span><span class="p">[@]</span><span class="si">}</span>
+<span class="w">    </span><span class="k">do</span>
+<span class="w">        </span><span class="nv">val</span><span class="o">=</span><span class="k">$(</span><span class="w"> </span><span class="nb">printf</span><span class="w"> </span><span class="s2">&quot;%d&quot;</span><span class="w"> </span><span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="w"> </span><span class="k">)</span>
+<span class="w">        </span><span class="nv">result</span><span class="o">=</span><span class="k">$((</span><span class="w"> </span><span class="nv">result</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="o">(</span><span class="nv">val</span><span class="o">&lt;&lt;(</span><span class="nv">ITER</span><span class="o">*</span><span class="m">8</span><span class="k">))</span><span class="w"> </span><span class="o">))</span>
+<span class="w">        </span><span class="nv">ITER</span><span class="o">=</span><span class="k">$(</span><span class="w"> </span>expr<span class="w"> </span><span class="nv">$ITER</span><span class="w"> </span>+<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="k">)</span>
+<span class="w">    </span><span class="k">done</span>
+<span class="w">    </span><span class="nv">DIGIT</span><span class="o">=</span><span class="k">$((</span><span class="w"> </span><span class="nv">ITER</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">2</span><span class="k">))</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="nv">$DIGIT</span><span class="w"> </span><span class="k">in</span>
+<span class="w">        </span><span class="m">2</span><span class="o">)</span>
+<span class="w">        </span><span class="nv">result</span><span class="o">=</span><span class="k">$(</span><span class="w"> </span><span class="nb">printf</span><span class="w"> </span><span class="s2">&quot;0x%02x&quot;</span><span class="w"> </span><span class="nv">$result</span><span class="w">  </span><span class="k">)</span>
+<span class="w">        </span><span class="p">;;</span>
+<span class="w">        </span><span class="m">4</span><span class="o">)</span>
+<span class="w">        </span><span class="nv">result</span><span class="o">=</span><span class="k">$(</span><span class="w"> </span><span class="nb">printf</span><span class="w"> </span><span class="s2">&quot;0x%04x&quot;</span><span class="w"> </span><span class="nv">$result</span><span class="w">  </span><span class="k">)</span>
+<span class="w">        </span><span class="p">;;</span>
+<span class="w">        </span><span class="m">6</span><span class="p">|</span><span class="m">8</span><span class="o">)</span>
+<span class="w">        </span><span class="nv">result</span><span class="o">=</span><span class="k">$(</span><span class="w"> </span><span class="nb">printf</span><span class="w"> </span><span class="s2">&quot;0x%08x&quot;</span><span class="w"> </span><span class="nv">$result</span><span class="w">  </span><span class="k">)</span>
+<span class="w">        </span><span class="p">;;</span>
+<span class="w">        </span>*<span class="o">)</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span>digit<span class="w"> </span>error
+<span class="w">        </span><span class="p">;;</span>
+<span class="w">    </span><span class="k">esac</span>
+<span class="o">}</span>
+
+get_hex_to_dec<span class="w"> </span><span class="si">${</span><span class="nv">DATA</span><span class="p">[0]</span><span class="si">}</span><span class="w"> </span><span class="si">${</span><span class="nv">DATA</span><span class="p">[1]</span><span class="si">}</span>
+
+<span class="nv">SOC_VERSION</span><span class="o">=</span><span class="nv">$result</span>
+
+<span class="nv">PARTNUM</span><span class="o">=</span><span class="k">$(</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">DATA</span><span class="p">[@]:</span><span class="nv">0x14</span><span class="p">:</span><span class="nv">22</span><span class="si">}</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xxd<span class="w"> </span>-r<span class="w"> </span>-p<span class="w"> </span><span class="k">)</span>
+<span class="nb">echo</span><span class="w"> </span><span class="nv">PARTNUM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">$PARTNUM</span>
+
+<span class="nv">SERIAL</span><span class="o">=</span><span class="k">$(</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">DATA</span><span class="p">[@]:</span><span class="nv">0x4a</span><span class="p">:</span><span class="nv">13</span><span class="si">}</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xxd<span class="w"> </span>-r<span class="w"> </span>-p<span class="w"> </span><span class="k">)</span>
+<span class="nb">echo</span><span class="w"> </span>SERIAL<span class="w"> </span><span class="nv">$SERIAL</span>
+
+<span class="nv">PART_ARRAY</span><span class="o">=</span><span class="k">$(</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$PARTNUM</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tr<span class="w"> </span><span class="s2">&quot;-&quot;</span><span class="w"> </span><span class="s2">&quot;\n&quot;</span><span class="w"> </span><span class="k">)</span>
+<span class="nv">IFS</span><span class="o">=</span><span class="s1">&#39;- &#39;</span><span class="w"> </span><span class="nb">read</span><span class="w"> </span>-ra<span class="w"> </span>PART_ARRAY<span class="w"> </span><span class="o">&lt;&lt;&lt;</span><span class="w"> </span><span class="nv">$PARTNUM</span>
+
+<span class="nv">MODULE_ID</span><span class="o">=</span><span class="si">${</span><span class="nv">PART_ARRAY</span><span class="p">[1]:</span><span class="nv">1</span><span class="si">}</span>
+<span class="nv">SKU</span><span class="o">=</span><span class="si">${</span><span class="nv">PART_ARRAY</span><span class="p">[2]</span><span class="si">}</span>
+<span class="nv">FAB</span><span class="o">=</span><span class="si">${</span><span class="nv">PART_ARRAY</span><span class="p">[3]</span><span class="si">}</span>
+<span class="nv">REV</span><span class="o">=</span><span class="si">${</span><span class="nv">PART_ARRAY</span><span class="p">[4]</span><span class="si">}</span>
+
+<span class="k">case</span><span class="w"> </span><span class="nv">$MODULE_ID</span><span class="w"> </span><span class="k">in</span>
+<span class="w">    </span><span class="m">3701</span><span class="o">)</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="nv">$SKU</span><span class="w"> </span><span class="k">in</span>
+<span class="w">        </span><span class="m">0000</span><span class="o">)</span>
+<span class="w">        </span><span class="nv">MODULE</span><span class="o">=</span><span class="s2">&quot;AGX Orin&quot;</span>
+<span class="w">        </span><span class="nv">TARGET</span><span class="o">=</span>avs200-agx-orin-64g
+<span class="w">        </span><span class="p">;;</span>
+<span class="w">        </span><span class="m">0004</span><span class="o">)</span>
+<span class="w">        </span><span class="nv">MODULE</span><span class="o">=</span><span class="s2">&quot;AGX Orin 32GB&quot;</span>
+<span class="w">        </span><span class="nv">TARGET</span><span class="o">=</span>avs200-agx-orin-32g
+<span class="w">        </span><span class="p">;;</span>
+<span class="w">        </span><span class="m">0005</span><span class="o">)</span>
+<span class="w">        </span><span class="nv">MODULE</span><span class="o">=</span><span class="s2">&quot;AGX Orin 64GB&quot;</span>
+<span class="w">        </span><span class="nv">TARGET</span><span class="o">=</span>avs200-agx-orin-64g
+<span class="w">        </span><span class="p">;;</span>
+<span class="w">        </span><span class="m">0008</span><span class="o">)</span>
+<span class="w">        </span><span class="nv">MODULE</span><span class="o">=</span><span class="s2">&quot;AGX Orin Industrial&quot;</span>
+<span class="w">        </span><span class="nv">TARGET</span><span class="o">=</span>avs200-agx-orin-industrial
+<span class="w">        </span><span class="p">;;</span>
+<span class="w">    </span><span class="k">esac</span>
+<span class="w">    </span><span class="p">;;</span>
+<span class="w">    </span><span class="m">3767</span><span class="o">)</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="nv">$SKU</span><span class="w"> </span><span class="k">in</span>
+<span class="w">        </span><span class="m">0000</span><span class="o">)</span>
+<span class="w">        </span><span class="nv">MODULE</span><span class="o">=</span><span class="s2">&quot;Orin NX 16GB&quot;</span>
+<span class="w">        </span><span class="nv">TARGET</span><span class="o">=</span><span class="nv">$TARGET_PREFIX</span>-orinnx-16g
+<span class="w">        </span><span class="p">;;</span>
+<span class="w">        </span><span class="m">0001</span><span class="o">)</span>
+<span class="w">        </span><span class="nv">MODULE</span><span class="o">=</span><span class="s2">&quot;Orin NX 8GB&quot;</span>
+<span class="w">        </span><span class="nv">TARGET</span><span class="o">=</span><span class="nv">$TARGET_PREFIX</span>-orinnx-8g
+<span class="w">        </span><span class="p">;;</span>
+<span class="w">        </span><span class="m">0003</span><span class="p">|</span><span class="m">0005</span><span class="o">)</span>
+<span class="w">        </span><span class="nv">MODULE</span><span class="o">=</span><span class="s2">&quot;Orin Nano 8GB&quot;</span>
+<span class="w">        </span><span class="nv">TARGET</span><span class="o">=</span><span class="nv">$TARGET_PREFIX</span>-orinnano-8g
+<span class="w">        </span><span class="p">;;</span>
+<span class="w">        </span><span class="m">0004</span><span class="o">)</span>
+<span class="w">        </span><span class="nv">MODULE</span><span class="o">=</span><span class="s2">&quot;Orin Nano 4GB&quot;</span>
+<span class="w">        </span><span class="nv">TARGET</span><span class="o">=</span><span class="nv">$TARGET_PREFIX</span>-orinnano-4g
+<span class="w">        </span><span class="p">;;</span>
+<span class="w">    </span><span class="k">esac</span>
+<span class="w">    </span><span class="p">;;</span>
+<span class="k">esac</span>
+
+<span class="c1"># echo module : $MODULE</span>
+<span class="c1"># echo sku : $SKU</span>
+<span class="c1"># echo fab : $FAB</span>
+<span class="c1"># echo rev : $REV</span>
+
+<span class="nv">FS_DEV</span><span class="o">=</span><span class="k">$(</span>df<span class="w"> </span>-h<span class="w"> </span>/<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;^/dev&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;{print $1}&#39;</span><span class="k">)</span>
+
+<span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$FS_DEV</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>*<span class="s2">&quot;nvme&quot;</span>*<span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="k">then</span>
+<span class="w">    </span><span class="nv">FS_DEV</span><span class="o">=</span>nvme
+<span class="k">elif</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$FS_DEV</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>*<span class="s2">&quot;mmcblk&quot;</span>*<span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="k">then</span>
+<span class="w">    </span><span class="nv">FS_DEV</span><span class="o">=</span>emmc
+<span class="k">else</span>
+<span class="w">    </span><span class="nv">FS_DEV</span><span class="o">=</span>unknown
+<span class="k">fi</span>
+
+<span class="nb">echo</span><span class="w"> </span>filesystem:<span class="w"> </span><span class="nv">$FS_DEV</span>
+
+<span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$TARGET</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;avs200-agx-orin&quot;</span>*<span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nv">PREFIX</span><span class="o">=</span>avs200
+<span class="w">    </span><span class="nv">EXT_LINUX_SRC</span><span class="o">=</span><span class="s2">&quot;extlinux.conf.</span><span class="nv">$PREFIX</span><span class="s2">&quot;&quot;_</span><span class="nv">$FS_DEV</span><span class="s2">.overlay&quot;</span>
+<span class="k">elif</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$TARGET</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;avs100-orin&quot;</span>*<span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nv">PREFIX</span><span class="o">=</span>avs100
+<span class="w">    </span><span class="nv">EXT_LINUX_SRC</span><span class="o">=</span><span class="s2">&quot;extlinux.conf.</span><span class="nv">$PREFIX</span><span class="s2">.overlay&quot;</span>
+<span class="k">elif</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$TARGET</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;avs101-orin&quot;</span>*<span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nv">PREFIX</span><span class="o">=</span>avs101
+<span class="w">    </span><span class="nv">EXT_LINUX_SRC</span><span class="o">=</span><span class="s2">&quot;extlinux.conf.</span><span class="nv">$PREFIX</span><span class="s2">.overlay&quot;</span>
+<span class="k">fi</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;target : </span><span class="nv">$TARGET</span><span class="s2">&quot;</span>
+
+<span class="nv">DTB_PATH</span><span class="o">=</span>/boot
+<span class="nv">BOARD_DTB</span><span class="o">=</span><span class="nv">$DTB_PATH</span>/<span class="nv">$TARGET</span>.dtb
+<span class="nv">OUTPUT_DTB</span><span class="o">=</span><span class="nv">$DTB_PATH</span>/dtb/<span class="nv">$TARGET</span>-overlay.dtb
+
+<span class="nv">GCAM_DTB</span><span class="o">=</span><span class="nv">$DTB_PATH</span>/<span class="nv">$PREFIX</span>-<span class="nv">$GCAM_BOARD</span>-overlay.dtbo
+<span class="nv">CAMERA_DTB</span><span class="o">=</span><span class="nv">$DTB_PATH</span>/<span class="nv">$PREFIX</span>-<span class="nv">$CAMERA</span>-overlay.dtbo
+
+<span class="nv">OVERLAY_DTB_FILES</span><span class="o">=(</span>
+<span class="w">    </span>tegra234-carveouts.dtbo
+<span class="w">    </span>tegra-optee.dtbo
+<span class="o">)</span>
+
+<span class="nv">OVERLAY_DTB_PATH</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+
+<span class="k">for</span><span class="w"> </span>OVERLAY_DTB_FILE<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="si">${</span><span class="nv">OVERLAY_DTB_FILES</span><span class="p">[@]</span><span class="si">}</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span><span class="nv">OVERLAY_DTB_PATH</span><span class="o">+=</span><span class="s2">&quot;</span><span class="nv">$DTB_PATH</span><span class="s2">/</span><span class="nv">$OVERLAY_DTB_FILE</span><span class="s2"> &quot;</span>
+<span class="k">done</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;additional overlay : </span><span class="nv">$OVERLAY_DTB_PATH</span><span class="s2">&quot;</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;board : </span><span class="nv">$BOARD_DTB</span><span class="s2">&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;gcam : </span><span class="nv">$GCAM_DTB</span><span class="s2">&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;camera : </span><span class="nv">$CAMERA_DTB</span><span class="s2">&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;overlay : </span><span class="nv">$OUTPUT_DTB</span><span class="s2">&quot;</span>
+fdtoverlay<span class="w"> </span>-i<span class="w"> </span><span class="nv">$BOARD_DTB</span><span class="w"> </span>-o<span class="w"> </span><span class="nv">$OUTPUT_DTB</span><span class="w"> </span><span class="nv">$GCAM_DTB</span><span class="w"> </span><span class="nv">$CAMERA_DTB</span><span class="w"> </span><span class="nv">$OVERLAY_DTB_PATH</span><span class="w"> </span>
+
+<span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>!<span class="w"> </span>-f<span class="w"> </span><span class="nv">$OUTPUT_DTB</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$OUTPUT_DTB</span><span class="s2"> is not exists.&quot;</span>
+<span class="w">    </span><span class="nb">exit</span>
+<span class="k">fi</span>
+
+<span class="nv">EXT_LINUX_SRC</span><span class="o">=</span><span class="s2">&quot;/boot/</span><span class="nv">$EXT_LINUX_SRC</span><span class="s2">&quot;</span>
+
+<span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>!<span class="w"> </span>-f<span class="w"> </span><span class="nv">$EXT_LINUX_SRC</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$EXT_LINUX_SRC</span><span class="s2"> is not exists.&quot;</span>
+<span class="w">    </span><span class="nb">exit</span>
+<span class="k">fi</span>
+
+<span class="c1"># FDT 경로를 overlay dtb로 변경</span>
+sudo<span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;s|FDT .*|FDT </span><span class="nv">$OUTPUT_DTB</span><span class="s2">|&quot;</span><span class="w"> </span><span class="nv">$EXT_LINUX_SRC</span>
+
+
+<span class="nv">DIFF_RESULT</span><span class="o">=</span><span class="k">$(</span>diff<span class="w"> </span><span class="nv">$EXT_LINUX_SRC</span><span class="w"> </span>/boot/extlinux/extlinux.conf<span class="w"> </span>-q<span class="k">)</span>
+
+<span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$DIFF_RESULT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>*<span class="s2">&quot;differ&quot;</span>*<span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;extlinux.conf is updated.&quot;</span>
+<span class="w">    </span>sudo<span class="w"> </span>mv<span class="w"> </span>/boot/extlinux/extlinux.conf<span class="w"> </span>/boot/extlinux/extlinux.conf.overlay_backup
+<span class="w">    </span>sudo<span class="w"> </span>cp<span class="w"> </span><span class="nv">$EXT_LINUX_SRC</span><span class="w"> </span>/boot/extlinux/extlinux.conf
+<span class="k">else</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;extlinux.conf is already updated.&quot;</span>
+<span class="k">fi</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Done. reboot&quot;</span>
+</pre></div>
+</div>
+<section id="run">
+<h3>run<a class="headerlink" href="#run" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>아래 명령을 수행하고 재부팅 후 /dev/video* 장치들이 보이면 성공입니다.</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/boot
+sudo<span class="w"> </span>./makeoverlay_rootfs
+sudo<span class="w"> </span>reboot<span class="w"> </span>now
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../io/avs200-io/interface.html" class="btn btn-neutral float-left" title="Interface" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="gstreamer.html" class="btn btn-neutral float-right" title="gstreamer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Telelian.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

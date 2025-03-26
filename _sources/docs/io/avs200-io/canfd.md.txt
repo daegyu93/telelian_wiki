@@ -1,7 +1,7 @@
 (canfd-section)=
 # CANFD 
 
-![canfd](../../_static/canfd.png)
+![canfd](../../../_static/canfd.png)
 
 ## 딥스위치(DIP Switch)
 

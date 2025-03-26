@@ -22,7 +22,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Interface" href="../avs200/interface.html" />
+    <link rel="next" title="avs200" href="../io/avs200.html" />
     <link rel="prev" title="Jetpack 5" href="jetpack5.html" /> 
 </head>
 
@@ -45,51 +45,87 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Telelian L4T:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Setup Jetpack:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="jetpack5.html">Jetpack 5</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Jetpack 6</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#setup-telelian-l4t">setup telelian l4t</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#flash">flash</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#recovery-mode">recovery mode</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#avs100">avs100</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#avs101">avs101</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#avs200">avs200</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setup-telelian-linux-for-tegra">setup telelian Linux for Tegra</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#setup">setup</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id1">flash</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id2">공통</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id3">avs100</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id4">avs101</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id5">avs200</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="#flash-to-target">flash to target</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#avs100">avs100</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#avs101">avs101</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#avs200">avs200</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#flash">flash</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#target-device">target device 설정</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id6">최초 부팅 후 설정</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gstreamer">gstreamer 설치</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#jetpack">jetpack 설치</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#jtop">jtop 설치</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nvidia-l4t-gstreamer">nvidia-l4t-gstreamer 설치</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nvidia-jetpack">nvidia-jetpack 설치</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#build-telelian-l4t">Build Telelian l4t</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id7">문의</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">문의</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">AVS200:</span></p>
+<p class="caption" role="heading"><span class="caption-text">IO:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../avs200/interface.html">Interface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../avs200/gpio.html">GPIO</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../avs200/canfd.html">CANFD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../io/avs200.html">avs200</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../io/avs200-io/canfd.html">CANFD</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../io/avs200-io/canfd.html#dip-switch">딥스위치(DIP Switch)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../io/avs200-io/canfd.html#id1">입력 하이 임계값</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../io/avs200-io/canfd.html#id2">입력 로우 임계값</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../io/avs200-io/gpio.html">GPIO</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../io/avs200-io/gpio.html#dip-switch">딥스위치(DIP Switch)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../io/avs200-io/gpio.html#id1">입력 하이 임계값</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../io/avs200-io/gpio.html#id2">출력 최대 전류</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../io/avs200-io/gpio.html#id3">GPIO 핀 번호 매핑</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../io/avs200-io/gpio.html#mux">멀티플렉서(Mux) 설정</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../io/avs200-io/gpio.html#id4">GPIO 설정 및 제어 가이드</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../io/avs200-io/interface.html">Interface</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../io/avs200-io/interface.html#uart">UART</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../io/avs200-io/interface.html#lan">LAN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../io/avs200-io/interface.html#can">CAN</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Camera:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../camera/gstreamer.html">gstreamer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../camera/framesync.html">frame sync pwm 설정</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../camera/overlay.html">Camera overlay</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../camera/overlay.html#jetson-orin-system">Jetson Orin System</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../camera/overlay.html#avs100-avs200">AVS100, AVS200</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../camera/overlay.html#avs101">AVS101</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../camera/overlay.html#camera">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../camera/overlay.html#setup-camera-overlay">Setup Camera Overlay</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../camera/overlay.html#run">run</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../camera/gstreamer.html">gstreamer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../camera/gstreamer.html#preview">preview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../camera/gstreamer.html#jpeg-capture">jpeg capture</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../camera/framesync.html">frame sync pwm 설정</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../camera/framesync.html#avs100">avs100</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../camera/framesync.html#avs101">avs101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../camera/framesync.html#avs200">avs200</a></li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -118,8 +154,8 @@
              
   <section class="tex2jax_ignore mathjax_ignore" id="jetpack-6">
 <h1>Jetpack 6<a class="headerlink" href="#jetpack-6" title="Link to this heading"></a></h1>
-<section id="setup-telelian-l4t">
-<h2>setup telelian l4t<a class="headerlink" href="#setup-telelian-l4t" title="Link to this heading"></a></h2>
+<section id="setup-telelian-linux-for-tegra">
+<h2>setup telelian Linux for Tegra<a class="headerlink" href="#setup-telelian-linux-for-tegra" title="Link to this heading"></a></h2>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p class="rubric" id="linux-for-tegra-version">지원하는 Linux for Tegra version은 아래와 같습니다.</p>
@@ -137,6 +173,16 @@
 <p class="admonition-title">Warning</p>
 <p class="rubric" id="host-ubuntu-20-04-22-04">host는 ubuntu 20.04 또는 22.04를 사용하세요.</p>
 </div>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p class="rubric" id="apt-upgrade-apt-dist-upgrade">apt upgrade, apt dist-upgrade 를 하면 안됩니다.</p>
+<ul class="simple">
+<li><p>kernel image와 device tree, device driver는 avs100,101,200에 맞게 빌드되어 셋팅되어 있습니다.</p></li>
+<li><p>apt upgrade, apt dist-upgrade를 하게 되면 nvidia Jetson devkit용으로 파일이 덮어써져 부팅이 안됩니다.</p></li>
+</ul>
+</div>
+<section id="setup">
+<span id="setup-section"></span><h3>setup<a class="headerlink" href="#setup" title="Link to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span>
 sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>git-core<span class="w"> </span>build-essential<span class="w"> </span>libncurses5-dev<span class="w"> </span><span class="se">\</span>
 bc<span class="w"> </span>bison<span class="w"> </span>flex<span class="w"> </span>libssl-dev<span class="w"> </span>fakeroot<span class="w"> </span><span class="se">\</span>
@@ -205,51 +251,55 @@ sudo<span class="w"> </span>./make_depmod.sh
 </pre></div>
 </div>
 </section>
-<section id="flash">
-<h2>flash<a class="headerlink" href="#flash" title="Link to this heading"></a></h2>
-<section id="recovery-mode">
-<h3>recovery mode<a class="headerlink" href="#recovery-mode" title="Link to this heading"></a></h3>
+</section>
+<section id="flash-to-target">
+<h2>flash to target<a class="headerlink" href="#flash-to-target" title="Link to this heading"></a></h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p class="rubric" id="recovery-mode">recovery mode</p>
 <ul class="simple">
 <li><p>Flash 하기 전 Recovery mode로 진입해야 합니다.</p></li>
 <li><p>recovery usb와 Linux_for_Tegra가 설치된 ubuntu PC를 연결합니다.</p></li>
 <li><p>Power on 상태에서 아래 사진에 표시된 recovery button을 누른 상태에서 reset button을 눌렀다 뗀 후 2-3초 후에 recovery button에서 손을 뗍니다.</p></li>
 </ul>
+</div>
 <section id="avs100">
-<h4>avs100<a class="headerlink" href="#avs100" title="Link to this heading"></a></h4>
+<h3>avs100<a class="headerlink" href="#avs100" title="Link to this heading"></a></h3>
 <p><img alt="avs100" src="../../_images/avs100.jpg" /></p>
 </section>
 <section id="avs101">
-<h4>avs101<a class="headerlink" href="#avs101" title="Link to this heading"></a></h4>
+<h3>avs101<a class="headerlink" href="#avs101" title="Link to this heading"></a></h3>
 <p><img alt="avs101-front" src="../../_images/avs101-front.jpg" />
 <img alt="avs101-rear" src="../../_images/avs101-rear.jpg" /></p>
 </section>
 <section id="avs200">
-<h4>avs200<a class="headerlink" href="#avs200" title="Link to this heading"></a></h4>
+<h3>avs200<a class="headerlink" href="#avs200" title="Link to this heading"></a></h3>
 <p><img alt="avs200" src="../../_images/avs200.jpg" /></p>
 </section>
-</section>
-<section id="id1">
-<h3>flash<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<section id="flash">
+<h3>flash<a class="headerlink" href="#flash" title="Link to this heading"></a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <ul class="simple">
-<li><p>flash를 위한 기본 폴더는 아래와 같습니다.</p>
-<ul>
-<li><p>Linux_for_Tegra/</p></li>
-</ul>
-</li>
+<li><p>아래 명령어에서 보이는 경로는 위의 <a class="reference internal" href="#setup-section">setup</a>에서 설치된 경로이며 다른 경로를 사용했을 경우 Linux_for_Tegra 아래에서 작업하시면 됩니다.</p></li>
 <li><p>flash를 위한 명령어는 아래와 같습니다.</p></li>
 </ul>
-<section id="id2">
-<h4>공통<a class="headerlink" href="#id2" title="Link to this heading"></a></h4>
+</div>
+<section id="id1">
+<h4>공통<a class="headerlink" href="#id1" title="Link to this heading"></a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">L4T_VERSION</span><span class="o">=</span><span class="m">36</span>.4.3
 
 <span class="nv">BASE_PATH</span><span class="o">=</span><span class="nv">$HOME</span>/l4t_ws/<span class="si">${</span><span class="nv">L4T_VERSION</span><span class="si">}</span>
 <span class="nv">L4T_PATH</span><span class="o">=</span><span class="nv">$BASE_PATH</span>/Linux_for_Tegra
 <span class="nb">cd</span><span class="w"> </span><span class="nv">$L4T_PATH</span>
+
+<span class="c1"># host pc 에서 한번만 실행하면 됩니다.</span>
+sudo<span class="w"> </span>./tools/l4t_flash_prerequisites.sh
 </pre></div>
 </div>
 </section>
-<section id="id3">
-<h4>avs100<a class="headerlink" href="#id3" title="Link to this heading"></a></h4>
+<section id="id2">
+<h4>avs100<a class="headerlink" href="#id2" title="Link to this heading"></a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 최초 1회 flash</span>
 sudo<span class="w"> </span>./flash_avs100_nvme.sh
 
@@ -258,8 +308,8 @@ sudo<span class="w"> </span>./flash_avs100_nvme_flash_only.sh
 </pre></div>
 </div>
 </section>
-<section id="id4">
-<h4>avs101<a class="headerlink" href="#id4" title="Link to this heading"></a></h4>
+<section id="id3">
+<h4>avs101<a class="headerlink" href="#id3" title="Link to this heading"></a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 최초 1회 flash</span>
 sudo<span class="w"> </span>./flash_avs101_nvme.sh
 
@@ -268,8 +318,8 @@ sudo<span class="w"> </span>./flash_avs101_nvme_flash_only.sh
 </pre></div>
 </div>
 </section>
-<section id="id5">
-<h4>avs200<a class="headerlink" href="#id5" title="Link to this heading"></a></h4>
+<section id="id4">
+<h4>avs200<a class="headerlink" href="#id4" title="Link to this heading"></a></h4>
 <section id="emmc">
 <h5>emmc<a class="headerlink" href="#emmc" title="Link to this heading"></a></h5>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 최초 1회 flash</span>
@@ -295,11 +345,15 @@ sudo<span class="w"> </span>./flash_avs200_nvme_flash_only.sh
 </section>
 <section id="target-device">
 <h2>target device 설정<a class="headerlink" href="#target-device" title="Link to this heading"></a></h2>
-<section id="id6">
-<h3>최초 부팅 후 설정<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="rubric" id="id5">최초 부팅 후 설정</p>
 <ul>
-<li><p>target device booting한 후 터미널에서 설정합니다.</p></li>
+<li><p>target device가 부팅된 후 터미널에서 설정합니다.</p></li>
 <li><p>group설정</p>
+<blockquote>
+<div><p>gpio, i2c 장치들을 non-sudo로 실행하기 위해 설정합니다.</p>
+</div></blockquote>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>gpio<span class="w"> </span>&lt;user-id&gt;
 sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>i2c<span class="w"> </span>&lt;user-id&gt;
 </pre></div>
@@ -315,32 +369,42 @@ sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> <
 </div>
 </li>
 </ul>
-</section>
-<section id="gstreamer">
-<h3>gstreamer 설치<a class="headerlink" href="#gstreamer" title="Link to this heading"></a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>nvidia-l4t-gstreamer
-</pre></div>
 </div>
-</section>
-<section id="jetpack">
-<h3>jetpack 설치<a class="headerlink" href="#jetpack" title="Link to this heading"></a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>nvidia-jetpack
-</pre></div>
-</div>
-</section>
 <section id="jtop">
 <h3>jtop 설치<a class="headerlink" href="#jtop" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>device의 상태를 모니터링하기 위해 설치합니다.</p></li>
+</ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3-pip
 sudo<span class="w"> </span>-H<span class="w"> </span>pip3<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>jetson-stats
 sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>jtop
 </pre></div>
 </div>
 </section>
+<section id="nvidia-l4t-gstreamer">
+<h3>nvidia-l4t-gstreamer 설치<a class="headerlink" href="#nvidia-l4t-gstreamer" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>jetson의 hardware를 이용하여 camera, encoder, decoder 등을 빠르게 액세스하기 위해 설치합니다.</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>nvidia-l4t-gstreamer
+</pre></div>
+</div>
+</section>
+<section id="nvidia-jetpack">
+<h3>nvidia-jetpack 설치<a class="headerlink" href="#nvidia-jetpack" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.nvidia.com/jetson/jetpack/install-setup/index.html#id1">nvidia-jetpack의 package 구성</a></p></li>
+<li><p>CUDA toolkit, cuDNN, TensorRT, OpenCV, VPI, nvidia container runtime, 등등이 포함된 패키지</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>nvidia-jetpack
+</pre></div>
+</div>
+</section>
 </section>
 <section id="build-telelian-l4t">
 <h2>Build Telelian l4t<a class="headerlink" href="#build-telelian-l4t" title="Link to this heading"></a></h2>
-<section id="id7">
-<h3>문의<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
+<section id="id6">
+<h3>문의<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="mailto:sales&#37;&#52;&#48;telelian&#46;com">sales<span>&#64;</span>telelian<span>&#46;</span>com</a></p></li>
 </ul>
@@ -353,13 +417,13 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class=
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="jetpack5.html" class="btn btn-neutral float-left" title="Jetpack 5" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../avs200/interface.html" class="btn btn-neutral float-right" title="Interface" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../io/avs200.html" class="btn btn-neutral float-right" title="avs200" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2025, dghwang.</p>
+    <p>&#169; Copyright 2025, Telelian.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

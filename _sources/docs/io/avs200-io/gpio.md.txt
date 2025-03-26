@@ -1,6 +1,6 @@
 # GPIO
 
-![digital_io](../../_static/digital_io.png)
+![digital_io](../../../_static/digital_io.png)
 
 ## 딥스위치(DIP Switch)
 

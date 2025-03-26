@@ -8,16 +8,24 @@ Telelian Wiki Page
 
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 3
    :caption: Telelian L4T:
 
    docs/telelian_l4t/jetpack5
    docs/telelian_l4t/jetpack6
+   
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 3
    :caption: AVS200:
 
    docs/avs200/interface
    docs/avs200/gpio
    docs/avs200/canfd
+
+.. toctree::
+   :maxdepth: 3
+   :caption: Camera:
+
+   docs/camera/gstreamer
+   docs/camera/framesync

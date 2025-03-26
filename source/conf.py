@@ -15,6 +15,8 @@ source_suffix = {
     '.md': 'markdown',
 }
 
+myst_url_schemes = ["http", "https", "mailto"]
+
 templates_path = ['_templates']
 exclude_patterns = []
 

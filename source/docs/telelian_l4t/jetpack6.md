@@ -13,7 +13,13 @@
 ```{warning}
 ## host는 ubuntu 20.04 또는 22.04를 사용하세요.
 ```
+```{danger}
+## sudo apt upgrade를 하면 안됩니다.
+- kernel image와 device tree, device driver는 avs100,101,200에 맞게 빌드되어 셋팅되어 있습니다.
+- apt upgrade를 하게 되면 nvidia Jetson devkit용으로 파일이 덮어써져 부팅이 안됩니다.
+```
 
+### setup
 ```bash
 sudo apt update 
 sudo apt install -y git-core build-essential libncurses5-dev \
@@ -83,7 +89,7 @@ sudo ./make_depmod.sh
 
 ```
 
-## flash
+## flash to target
 
 ### recovery mode
 - Flash 하기 전 Recovery mode로 진입해야 합니다.

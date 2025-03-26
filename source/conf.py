@@ -1,5 +1,5 @@
 project = 'Telelian Wiki'
-copyright = '2025, dghwang'
+copyright = '2025, Telelian'
 author = 'dghwang'
 release = '1.1.0'
 
@@ -24,6 +24,11 @@ language = 'en'
 
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
+html_theme_options = {
+    'navigation_depth': 3,
+    'collapse_navigation': False, 
+    # 'titles_only': False,          
+}
 
 # MyST-Parser setup
 myst_enable_extensions = [

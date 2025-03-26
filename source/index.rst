@@ -9,7 +9,7 @@ Telelian Wiki Page
 
 .. toctree::
    :maxdepth: 3
-   :caption: Telelian L4T:
+   :caption: Setup Linux for Tegra:
 
    docs/telelian_l4t/jetpack5
    docs/telelian_l4t/jetpack6
@@ -17,11 +17,10 @@ Telelian Wiki Page
 
 .. toctree::
    :maxdepth: 3
-   :caption: AVS200:
+   :caption: IO:
 
-   docs/avs200/interface
-   docs/avs200/gpio
-   docs/avs200/canfd
+   docs/io/avs200
+
 
 .. toctree::
    :maxdepth: 3

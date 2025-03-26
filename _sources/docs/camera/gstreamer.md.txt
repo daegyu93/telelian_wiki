@@ -1,5 +1,7 @@
 # gstreamer
-- camera overlay가 설정되어 있어야 합니다.
+```{important}
+- [Camera Overlay](overlay.md)가 설정되어 있어야 합니다.
+```
 
 ## preview
 - device=/dev/video 뒤의 숫자는 camera의 번호입니다.

@@ -12,14 +12,6 @@
 
 - **디바이스 경로**: `/dev/ttyAMA0`
 
-```{warning}
-현재 기본 설정으로 `/dev/ttyAMA0`가 디버그 UART로 지정되어 있어, 설정을 변경하지 않으면 디버그 메시지가 출력됩니다. 일반 UART로 사용하려면 `extlinux.conf` 파일을 수정해야 합니다.
-
-```bash
-sudo vim /boot/extlinux/extlinux.conf
-# APPEND 라인에서 "console=ttyAMA0,115200" 구문 제거
-```
-
 ## LAN
 ```{warning}
 LAN LED가 비정상적으로 동작하며, LAN2의 MAC 주소가 재부팅 시마다 변경되는 문제가 있습니다. 이를 해결하려면 아래 링크의 스크립트를 다운로드하여 설치해야 합니다.

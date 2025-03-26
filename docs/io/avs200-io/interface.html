@@ -54,13 +54,13 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../telelian_l4t/jetpack6.html#flash-to-target">flash to target</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../telelian_l4t/jetpack6.html#avs100">avs100</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../telelian_l4t/jetpack6.html#avs101">avs101</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../telelian_l4t/jetpack6.html#avs200">avs200</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../telelian_l4t/jetpack6.html#recovery-mode">recovery mode</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../telelian_l4t/jetpack6.html#flash">flash</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../telelian_l4t/jetpack6.html#target-device">target device 설정</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../telelian_l4t/jetpack6.html#camera-overlay">Camera Overlay 설정</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../telelian_l4t/jetpack6.html#id5">최초 부팅 후 설정</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../telelian_l4t/jetpack6.html#jtop">jtop 설치</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../telelian_l4t/jetpack6.html#nvidia-l4t-gstreamer">nvidia-l4t-gstreamer 설치</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../telelian_l4t/jetpack6.html#nvidia-jetpack">nvidia-jetpack 설치</a></li>
@@ -169,14 +169,6 @@
 <ul class="simple">
 <li><p><strong>디바이스 경로</strong>: <code class="docutils literal notranslate"><span class="pre">/dev/ttyAMA0</span></code></p></li>
 </ul>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>현재 기본 설정으로 <code class="docutils literal notranslate"><span class="pre">/dev/ttyAMA0</span></code>가 디버그 UART로 지정되어 있어, 설정을 변경하지 않으면 디버그 메시지가 출력됩니다. 일반 UART로 사용하려면 <code class="docutils literal notranslate"><span class="pre">extlinux.conf</span></code> 파일을 수정해야 합니다.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>vim<span class="w"> </span>/boot/extlinux/extlinux.conf
-<span class="c1"># APPEND 라인에서 &quot;console=ttyAMA0,115200&quot; 구문 제거</span>
-</pre></div>
-</div>
-</div>
 </section>
 </section>
 <section id="lan">

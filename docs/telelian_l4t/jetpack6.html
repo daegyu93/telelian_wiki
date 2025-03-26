@@ -54,13 +54,13 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#flash-to-target">flash to target</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#avs100">avs100</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#avs101">avs101</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#avs200">avs200</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#recovery-mode">recovery mode</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#flash">flash</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#target-device">target device 설정</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#camera-overlay">Camera Overlay 설정</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">최초 부팅 후 설정</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#jtop">jtop 설치</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#nvidia-l4t-gstreamer">nvidia-l4t-gstreamer 설치</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#nvidia-jetpack">nvidia-jetpack 설치</a></li>
@@ -254,9 +254,10 @@ sudo<span class="w"> </span>./make_depmod.sh
 </section>
 <section id="flash-to-target">
 <h2>flash to target<a class="headerlink" href="#flash-to-target" title="Link to this heading"></a></h2>
+<section id="recovery-mode">
+<h3>recovery mode<a class="headerlink" href="#recovery-mode" title="Link to this heading"></a></h3>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p class="rubric" id="recovery-mode">recovery mode</p>
 <ul class="simple">
 <li><p>Flash 하기 전 Recovery mode로 진입해야 합니다.</p></li>
 <li><p>recovery usb와 Linux_for_Tegra가 설치된 ubuntu PC를 연결합니다.</p></li>
@@ -264,17 +265,18 @@ sudo<span class="w"> </span>./make_depmod.sh
 </ul>
 </div>
 <section id="avs100">
-<h3>avs100<a class="headerlink" href="#avs100" title="Link to this heading"></a></h3>
+<h4>avs100<a class="headerlink" href="#avs100" title="Link to this heading"></a></h4>
 <p><img alt="avs100" src="../../_images/avs100.jpg" /></p>
 </section>
 <section id="avs101">
-<h3>avs101<a class="headerlink" href="#avs101" title="Link to this heading"></a></h3>
+<h4>avs101<a class="headerlink" href="#avs101" title="Link to this heading"></a></h4>
 <p><img alt="avs101-front" src="../../_images/avs101-front.jpg" />
 <img alt="avs101-rear" src="../../_images/avs101-rear.jpg" /></p>
 </section>
 <section id="avs200">
-<h3>avs200<a class="headerlink" href="#avs200" title="Link to this heading"></a></h3>
+<h4>avs200<a class="headerlink" href="#avs200" title="Link to this heading"></a></h4>
 <p><img alt="avs200" src="../../_images/avs200.jpg" /></p>
+</section>
 </section>
 <section id="flash">
 <h3>flash<a class="headerlink" href="#flash" title="Link to this heading"></a></h3>
@@ -320,8 +322,9 @@ sudo<span class="w"> </span>./flash_avs101_nvme_flash_only.sh
 </section>
 <section id="id4">
 <h4>avs200<a class="headerlink" href="#id4" title="Link to this heading"></a></h4>
-<section id="emmc">
-<h5>emmc<a class="headerlink" href="#emmc" title="Link to this heading"></a></h5>
+<ul class="simple">
+<li><p>emmc</p></li>
+</ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 최초 1회 flash</span>
 sudo<span class="w"> </span>./flash_avs200_emmc.sh
 
@@ -329,9 +332,9 @@ sudo<span class="w"> </span>./flash_avs200_emmc.sh
 sudo<span class="w"> </span>./flash_avs200_emmc_flash_only.sh
 </pre></div>
 </div>
-</section>
-<section id="nvme">
-<h5>nvme<a class="headerlink" href="#nvme" title="Link to this heading"></a></h5>
+<ul class="simple">
+<li><p>nvme</p></li>
+</ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 최초 1회 flash</span>
 sudo<span class="w"> </span>./flash_avs200_nvme.sh
 
@@ -342,12 +345,21 @@ sudo<span class="w"> </span>./flash_avs200_nvme_flash_only.sh
 </section>
 </section>
 </section>
-</section>
 <section id="target-device">
 <h2>target device 설정<a class="headerlink" href="#target-device" title="Link to this heading"></a></h2>
+<section id="camera-overlay">
+<h3>Camera Overlay 설정<a class="headerlink" href="#camera-overlay" title="Link to this heading"></a></h3>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../camera/overlay.html"><span class="std std-doc">Camera Overlay 설정</span></a>이 정상적으로 설정되어 있어야 카메라를 사용할 수 있습니다.</p></li>
+</ul>
+</div>
+</section>
+<section id="id5">
+<h3>최초 부팅 후 설정<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p class="rubric" id="id5">최초 부팅 후 설정</p>
 <ul>
 <li><p>target device가 부팅된 후 터미널에서 설정합니다.</p></li>
 <li><p>group설정</p>
@@ -370,6 +382,7 @@ sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> <
 </li>
 </ul>
 </div>
+</section>
 <section id="jtop">
 <h3>jtop 설치<a class="headerlink" href="#jtop" title="Link to this heading"></a></h3>
 <ul class="simple">

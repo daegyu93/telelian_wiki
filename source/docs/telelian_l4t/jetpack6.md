@@ -92,8 +92,8 @@ sudo ./make_depmod.sh
 
 ## flash to target
 
-```{important}
 ### recovery mode
+```{important}
 - Flash 하기 전 Recovery mode로 진입해야 합니다.
 - recovery usb와 Linux_for_Tegra가 설치된 ubuntu PC를 연결합니다.
 - Power on 상태에서 아래 사진에 표시된 recovery button을 누른 상태에서 reset button을 눌렀다 뗀 후 2-3초 후에 recovery button에서 손을 뗍니다.
@@ -146,7 +146,7 @@ sudo ./flash_avs101_nvme_flash_only.sh
 ```
 
 #### avs200
-##### emmc
+- emmc
 ```bash
 # 최초 1회 flash
 sudo ./flash_avs200_emmc.sh
@@ -155,7 +155,7 @@ sudo ./flash_avs200_emmc.sh
 sudo ./flash_avs200_emmc_flash_only.sh
 ```
 
-##### nvme
+- nvme
 ```bash
 # 최초 1회 flash
 sudo ./flash_avs200_nvme.sh
@@ -167,8 +167,13 @@ sudo ./flash_avs200_nvme_flash_only.sh
 
 ## target device 설정
 
-```{note}
+### Camera Overlay 설정
+```{important}
+- [Camera Overlay 설정](../camera/overlay.md)이 정상적으로 설정되어 있어야 카메라를 사용할 수 있습니다.
+```
+
 ### 최초 부팅 후 설정 
+```{note}
 - target device가 부팅된 후 터미널에서 설정합니다.
 - group설정
     > gpio, i2c 장치들을 non-sudo로 실행하기 위해 설정합니다.

@@ -47,19 +47,7 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Telelian L4T:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Jetpack 5</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#setup">Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#build">Build</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#flashing">Flashing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#target-device-setup">Target device setup</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">최초 부팅 후 설정</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#jetpack">JetPack 설치</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#jtop">JTop 설치</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">카메라 확인</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Jetpack 5</a></li>
 <li class="toctree-l1"><a class="reference internal" href="jetpack6.html">Jetpack 6</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">AVS200:</span></p>
@@ -67,6 +55,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../avs200/interface.html">Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../avs200/gpio.html">GPIO</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../avs200/canfd.html">CANFD</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Camera:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../camera/gstreamer.html">gstreamer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../camera/framesync.html">frame sync pwm 설정</a></li>
 </ul>
 
         </div>
@@ -95,191 +88,10 @@
              
   <section class="tex2jax_ignore mathjax_ignore" id="jetpack-5">
 <h1>Jetpack 5<a class="headerlink" href="#jetpack-5" title="Link to this heading"></a></h1>
-<section id="setup">
-<h2>Setup<a class="headerlink" href="#setup" title="Link to this heading"></a></h2>
-<ol class="arabic simple">
-<li><p><strong>호스트 시스템 준비</strong>:</p>
-<ul class="simple">
-<li><p>Ubuntu 20.04를 사용하십시오.</p></li>
-</ul>
-</li>
-</ol>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p><strong>주의사항</strong>:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">setup.sh</span></code>를 실행하기 전에 필요한 패키지를 설치해야 합니다.</p></li>
-<li><p>권한 문제로 인해 <code class="docutils literal notranslate"><span class="pre">./setup.sh</span></code>를 <code class="docutils literal notranslate"><span class="pre">sudo</span></code>로 실행하면 안 됩니다. 실행 중간에 한 번 루트 비밀번호를 입력해야 합니다.</p></li>
-</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p class="rubric" id="id1">작업중</p>
 </div>
-<ol class="arabic" start="2">
-<li><p><strong>필요한 패키지 설치 및 스크립트 실행</strong>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>git-core<span class="w"> </span>build-essential<span class="w"> </span><span class="se">\</span>
-libncurses5-dev<span class="w"> </span>bc<span class="w"> </span>bison<span class="w"> </span>flex<span class="w"> </span>libssl-dev<span class="w"> </span>fakeroot<span class="w"> </span><span class="se">\</span>
-device-tree-compiler
-./setup.sh
-</pre></div>
-</div>
-</li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">setup.sh</span></code> 실행 완료 후 준비되는 패키지</strong>:</p>
-<ul class="simple">
-<li><p><strong>Jetson Linux_for_Tegra</strong>:</p>
-<ul>
-<li><p>L4T 커널 및 DTB 소스</p></li>
-<li><p>AVS200에 필요한 플래싱 관련 도구</p></li>
-</ul>
-</li>
-<li><p><strong>L4T Root Filesystem</strong>:</p>
-<ul>
-<li><p>DTB 오버레이를 위한 도구</p></li>
-</ul>
-</li>
-<li><p><strong>Telelian AVS200 관련 소스</strong>:</p>
-<ul>
-<li><p>GMSL 드라이버</p></li>
-<li><p>카메라 드라이버</p></li>
-<li><p>AVS200 디바이스 트리</p></li>
-<li><p>카메라 디바이스 트리</p></li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-</section>
-<section id="build">
-<h2>Build<a class="headerlink" href="#build" title="Link to this heading"></a></h2>
-<ol class="arabic">
-<li><p><strong>소스 디렉토리 위치</strong>:</p>
-<ul class="simple">
-<li><p>기본 경로: <code class="docutils literal notranslate"><span class="pre">$HOME/l4t_ws/Linux_for_Tegra/sources</span></code></p></li>
-</ul>
-</li>
-<li><p><strong>빌드 및 설치 명령어</strong>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span><span class="nv">$HOME</span>/l4t_ws/Linux_for_Tegra/sources
-<span class="w"> </span>
-<span class="c1"># 전체 빌드</span>
-./maketegra
-
-<span class="c1"># DTB만 빌드</span>
-./maketegra<span class="w"> </span>dtbs
-
-<span class="c1"># DTB를 플래싱 위치로 복사</span>
-sudo<span class="w"> </span>./cpdtb
-
-<span class="c1"># 커널만 빌드</span>
-./maketegra<span class="w"> </span>Image
-
-<span class="c1"># 커널 이미지를 플래싱 위치로 복사</span>
-sudo<span class="w"> </span>./cpkernel
-
-<span class="c1"># 모듈만 빌드</span>
-./maketegra<span class="w"> </span>modules
-
-<span class="c1"># 모듈을 루트 파일 시스템으로 복사</span>
-sudo<span class="w"> </span>./maketegra<span class="w"> </span>modules_install
-</pre></div>
-</div>
-</li>
-</ol>
-</section>
-<section id="flashing">
-<h2>Flashing<a class="headerlink" href="#flashing" title="Link to this heading"></a></h2>
-<ol class="arabic">
-<li><p><strong>플래싱 디렉토리 위치</strong>:</p>
-<ul class="simple">
-<li><p>기본 경로: <code class="docutils literal notranslate"><span class="pre">$HOME/l4t_ws/Linux_for_Tegra/</span></code></p></li>
-</ul>
-</li>
-<li><p><strong>플래싱 전 준비사항</strong>:</p>
-<ul class="simple">
-<li><p>호스트와 타겟을 연결하고, 타겟을 리커버리 모드로 진입시켜야 합니다.</p></li>
-</ul>
-</li>
-<li><p><strong>플래싱 명령어</strong>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span><span class="nv">$HOME</span>/l4t_ws/Linux_for_Tegra/
-sudo<span class="w"> </span>./flash_agx_orin_nvme.sh
-</pre></div>
-</div>
-</li>
-</ol>
-</section>
-<section id="target-device-setup">
-<h2>Target device setup<a class="headerlink" href="#target-device-setup" title="Link to this heading"></a></h2>
-<section id="id1">
-<h3>최초 부팅 후 설정<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
-<ol class="arabic">
-<li><p><strong>카메라 오버레이 설정</strong>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/boot
-sudo<span class="w"> </span>./makeoverlay_rootfs
-sudo<span class="w"> </span>reboot
-</pre></div>
-</div>
-</li>
-<li><p><strong>NVPModel 설정</strong>:</p>
-<ul class="simple">
-<li><p>Orin의 성능을 최대로 설정합니다.</p></li>
-<li><p>설정 후 <code class="docutils literal notranslate"><span class="pre">yes</span></code>를 입력하면 재부팅됩니다.</p></li>
-</ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>nvpmodel<span class="w"> </span>-m<span class="w"> </span><span class="m">0</span>
-</pre></div>
-</div>
-</li>
-</ol>
-</section>
-<section id="jetpack">
-<h3>JetPack 설치<a class="headerlink" href="#jetpack" title="Link to this heading"></a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>nvidia-jetpack
-</pre></div>
-</div>
-</section>
-<section id="jtop">
-<h3>JTop 설치<a class="headerlink" href="#jtop" title="Link to this heading"></a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3-pip
-sudo<span class="w"> </span>-H<span class="w"> </span>pip3<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>jetson-stats
-sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>jtop
-</pre></div>
-</div>
-</section>
-<section id="id2">
-<h3>카메라 확인<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
-<ul class="simple">
-<li><p>카메라 오버레이가 설정되어 있어야 합니다.</p></li>
-</ul>
-<ol class="arabic">
-<li><p><strong>프리뷰</strong>:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">device=/dev/video</span></code> 뒤의 숫자는 카메라 번호입니다.</p></li>
-</ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">DISPLAY</span><span class="o">=</span>:0
-
-gst-launch-1.0<span class="w"> </span><span class="se">\</span>
-nvv4l2camerasrc<span class="w"> </span><span class="nv">device</span><span class="o">=</span>/dev/video0<span class="w"> </span><span class="se">\</span>
-!<span class="w"> </span><span class="s2">&quot;video/x-raw(memory:NVMM),format=(string)UYVY,width=(int)3840,height=(int)2160,framerate=(fraction)30/1&quot;</span><span class="w"> </span><span class="se">\</span>
-!<span class="w"> </span>nvvidconv<span class="w"> </span><span class="se">\</span>
-!<span class="w"> </span><span class="s2">&quot;video/x-raw(memory:NVMM),format=(string)NV12&quot;</span><span class="w"> </span><span class="se">\</span>
-!<span class="w"> </span>nv3dsink<span class="w"> </span><span class="nv">sync</span><span class="o">=</span><span class="nb">false</span><span class="w"> </span>-e
-</pre></div>
-</div>
-</li>
-<li><p><strong>JPEG 캡처</strong>:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">filesink</span> <span class="pre">location=test.jpg</span></code>에서 <code class="docutils literal notranslate"><span class="pre">test.jpg</span></code>를 원하는 파일명으로 변경하여 저장할 수 있습니다.</p></li>
-</ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">DISPLAY</span><span class="o">=</span>:0
-
-gst-launch-1.0<span class="w"> </span><span class="se">\</span>
-nvv4l2camerasrc<span class="w"> </span><span class="nv">device</span><span class="o">=</span>/dev/video0<span class="w"> </span>num-buffers<span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
-!<span class="w"> </span><span class="s2">&quot;video/x-raw(memory:NVMM),format=(string)UYVY,width=(int)3840,height=(int)2160,framerate=(fraction)30/1&quot;</span><span class="w"> </span><span class="se">\</span>
-!<span class="w"> </span>nvvidconv<span class="w"> </span><span class="se">\</span>
-!<span class="w"> </span><span class="s2">&quot;video/x-raw(memory:NVMM),format=(string)NV12&quot;</span><span class="w"> </span><span class="se">\</span>
-!<span class="w"> </span>nvjpegenc<span class="w"> </span><span class="se">\</span>
-!<span class="w"> </span>filesink<span class="w"> </span><span class="nv">location</span><span class="o">=</span>test.jpg
-</pre></div>
-</div>
-</li>
-</ol>
-</section>
-</section>
 </section>
 
 

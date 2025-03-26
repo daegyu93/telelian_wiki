@@ -9,7 +9,7 @@ Telelian Wiki Page
 
 .. toctree::
    :maxdepth: 3
-   :caption: Setup Linux for Tegra:
+   :caption: Setup Jetpack:
 
    docs/telelian_l4t/jetpack5
    docs/telelian_l4t/jetpack6
@@ -26,5 +26,6 @@ Telelian Wiki Page
    :maxdepth: 3
    :caption: Camera:
 
+   docs/camera/overlay
    docs/camera/gstreamer
    docs/camera/framesync

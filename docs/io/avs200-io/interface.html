@@ -93,7 +93,6 @@
 </li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Interface</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#uart">UART</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#lan">LAN</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#can">CAN</a></li>
 </ul>
 </li>
@@ -170,19 +169,6 @@
 <li><p><strong>디바이스 경로</strong>: <code class="docutils literal notranslate"><span class="pre">/dev/ttyAMA0</span></code></p></li>
 </ul>
 </section>
-</section>
-<section id="lan">
-<h2>LAN<a class="headerlink" href="#lan" title="Link to this heading"></a></h2>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>LAN LED가 비정상적으로 동작하며, LAN2의 MAC 주소가 재부팅 시마다 변경되는 문제가 있습니다. 이를 해결하려면 아래 링크의 스크립트를 다운로드하여 설치해야 합니다.</p>
-<p><a class="reference external" href="https://gitlab.com/telelian-jetpack/util/avs200_eth_conf">avs200_eth_conf</a></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://gitlab.com/telelian-jetpack/util/avs200_eth_conf.git
-<span class="nb">cd</span><span class="w"> </span>avs200_eth_conf
-./install.sh
-</pre></div>
-</div>
-</div>
 </section>
 <section id="can">
 <span id="can-interface-section"></span><h2>CAN<a class="headerlink" href="#can" title="Link to this heading"></a></h2>

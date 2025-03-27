@@ -93,7 +93,6 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../io/avs200-io/interface.html">Interface</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../io/avs200-io/interface.html#uart">UART</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../io/avs200-io/interface.html#lan">LAN</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../io/avs200-io/interface.html#can">CAN</a></li>
 </ul>
 </li>
@@ -364,10 +363,9 @@ sudo<span class="w"> </span>./flash_avs200_nvme_flash_only.sh
 <li><p>target device가 부팅된 후 터미널에서 설정합니다.</p></li>
 <li><p>group설정</p>
 <blockquote>
-<div><p>gpio, i2c 장치들을 non-sudo로 실행하기 위해 설정합니다.</p>
+<div><p>gpio, i2c, tty 장치들을 non-sudo로 실행하기 위해 설정합니다.</p>
 </div></blockquote>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>gpio<span class="w"> </span>&lt;user-id&gt;
-sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>i2c<span class="w"> </span>&lt;user-id&gt;
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>gpio,i2c,dialout<span class="w"> </span>&lt;user-id&gt;
 </pre></div>
 </div>
 </li>

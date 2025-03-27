@@ -12,18 +12,6 @@
 
 - **디바이스 경로**: `/dev/ttyAMA0`
 
-## LAN
-```{warning}
-LAN LED가 비정상적으로 동작하며, LAN2의 MAC 주소가 재부팅 시마다 변경되는 문제가 있습니다. 이를 해결하려면 아래 링크의 스크립트를 다운로드하여 설치해야 합니다.
-
-[avs200_eth_conf](https://gitlab.com/telelian-jetpack/util/avs200_eth_conf)
-
-```bash
-git clone https://gitlab.com/telelian-jetpack/util/avs200_eth_conf.git
-cd avs200_eth_conf
-./install.sh
-```
-
 
 (can-interface-section)=
 ## CAN

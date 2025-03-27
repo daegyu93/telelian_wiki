@@ -176,10 +176,9 @@ sudo ./flash_avs200_nvme_flash_only.sh
 ```{note}
 - target device가 부팅된 후 터미널에서 설정합니다.
 - group설정
-    > gpio, i2c 장치들을 non-sudo로 실행하기 위해 설정합니다.
+    > gpio, i2c, tty 장치들을 non-sudo로 실행하기 위해 설정합니다.
     ```bash
-    sudo usermod -aG gpio <user-id>
-    sudo usermod -aG i2c <user-id>
+    sudo usermod -aG gpio,i2c,dialout <user-id>
     ```
 - nvpmodel 설정
     - orin의 성능 설정을 최대로 설정합니다.

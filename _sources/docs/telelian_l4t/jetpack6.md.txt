@@ -36,7 +36,7 @@ BASE_PATH=$HOME/l4t_ws/$L4T_VERSION
 mkdir -p $BASE_PATH
 cd $BASE_PATH
 
-wget https://gringrass.com/telelian-l4t/jp6/$L4T_VERSION/l4t_prebuilt.tar.gz -O $BASE_PATH/l4t_prebuilt.tar.gz
+wget https://tlln.xyz/telelian-l4t/jp6/$L4T_VERSION/l4t_prebuilt.tar.gz -O $BASE_PATH/l4t_prebuilt.tar.gz
 
 # Linux_for_Tegra download
 case ${L4T_VERSION} in

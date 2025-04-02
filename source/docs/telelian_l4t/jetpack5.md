@@ -164,7 +164,7 @@ sudo ./flash_avs200_nvme_flash_only.sh
 
 ### Camera Overlay 설정
 ```{important}
-- [Camera Overlay 설정](../camera/overlay.md)이 정상적으로 설정되어 있어야 카메라를 사용할 수 있습니다.
+- [Camera Overlay 설정](../camera/overlay.md)이 정상적으로 설정되어 있어야 GMSL 카메라를 사용할 수 있습니다.
 ```
 
 ### 최초 부팅 후 설정 

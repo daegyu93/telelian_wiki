@@ -261,11 +261,14 @@ tar<span class="w"> </span>xpf<span class="w"> </span><span class="si">${</span>
 <span class="w">    </span><span class="k">done</span>
 <span class="k">fi</span>
 
+<span class="nv">L4T_PATH</span><span class="o">=</span><span class="nv">$BASE_PATH</span>/Linux_for_Tegra
+
 <span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Downloading rootfs&quot;</span>
 wget<span class="w"> </span><span class="si">${</span><span class="nv">ROOTFS_LINK</span><span class="si">}</span>
-<span class="nb">cd</span><span class="w"> </span>Linux_for_Tegra/rootfs
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$L4T_PATH</span>/rootfs
 sudo<span class="w"> </span>tar<span class="w"> </span>xpf<span class="w"> </span><span class="si">${</span><span class="nv">ROOTFS_FILE</span><span class="si">}</span>
 
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$L4T_PATH</span>
 
 sudo<span class="w"> </span>./apply_binaries.sh
 <span class="c1"># sudo ./tools/l4t_create_default_user.sh -u &lt;username&gt; -p &lt;password&gt; -n &lt;hostname&gt; -a --accept-license</span>
@@ -276,7 +279,7 @@ sudo<span class="w"> </span>./tools/l4t_create_default_user.sh<span class="w"> <
 sudo<span class="w"> </span>tar<span class="w"> </span>xpf<span class="w"> </span>l4t_prebuilt.tar.gz
 
 <span class="c1"># depmod</span>
-<span class="nb">cd</span><span class="w"> </span><span class="nv">$BASE_PATH</span>/Linux_for_Tegra
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$L4T_PATH</span>
 sudo<span class="w"> </span>./make_depmod.sh
 </pre></div>
 </div>

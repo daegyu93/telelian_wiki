@@ -61,6 +61,9 @@ case ${L4T_VERSION} in
         ;;
 esac
 
+L4T_FILE=$(basename ${L4T_LINK})
+ROOTFS_FILE=$(basename ${ROOTFS_LINK})
+
 echo "Downloading Linux_for_Tegra"
 wget ${L4T_LINK}
 tar xpf ${L4T_FILE}
@@ -68,9 +71,11 @@ tar xpf ${L4T_FILE}
 if [ -n "${OVERLAY_LINKS}" ]; then
     echo "Downloading overlays"
     for overlay in ${OVERLAY_LINKS[@]}; do
-        echo "Downloading ${overlay}"
-        wget ${overlay}
-        tar xpf ${overlay}
+        overlay_file=$(basename ${overlay})
+        wget ${overlay} -O /tmp/${overlay_file}
+        echo "Extracting ${overlay}"
+        tar xpf /tmp/${overlay_file} --directory $BASE_PATH
+        rm -f /tmp/${overlay_file}
     done
 fi
 

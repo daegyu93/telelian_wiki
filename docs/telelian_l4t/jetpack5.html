@@ -243,6 +243,9 @@ wget<span class="w"> </span>https://tlln.xyz/telelian-l4t/jp5/<span class="nv">$
 <span class="w">        </span><span class="p">;;</span>
 <span class="k">esac</span>
 
+<span class="nv">L4T_FILE</span><span class="o">=</span><span class="k">$(</span>basename<span class="w"> </span><span class="si">${</span><span class="nv">L4T_LINK</span><span class="si">}</span><span class="k">)</span>
+<span class="nv">ROOTFS_FILE</span><span class="o">=</span><span class="k">$(</span>basename<span class="w"> </span><span class="si">${</span><span class="nv">ROOTFS_LINK</span><span class="si">}</span><span class="k">)</span>
+
 <span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Downloading Linux_for_Tegra&quot;</span>
 wget<span class="w"> </span><span class="si">${</span><span class="nv">L4T_LINK</span><span class="si">}</span>
 tar<span class="w"> </span>xpf<span class="w"> </span><span class="si">${</span><span class="nv">L4T_FILE</span><span class="si">}</span>
@@ -250,9 +253,11 @@ tar<span class="w"> </span>xpf<span class="w"> </span><span class="si">${</span>
 <span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">OVERLAY_LINKS</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
 <span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Downloading overlays&quot;</span>
 <span class="w">    </span><span class="k">for</span><span class="w"> </span>overlay<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="si">${</span><span class="nv">OVERLAY_LINKS</span><span class="p">[@]</span><span class="si">}</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
-<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Downloading </span><span class="si">${</span><span class="nv">overlay</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="w">        </span>wget<span class="w"> </span><span class="si">${</span><span class="nv">overlay</span><span class="si">}</span>
-<span class="w">        </span>tar<span class="w"> </span>xpf<span class="w"> </span><span class="si">${</span><span class="nv">overlay</span><span class="si">}</span>
+<span class="w">        </span><span class="nv">overlay_file</span><span class="o">=</span><span class="k">$(</span>basename<span class="w"> </span><span class="si">${</span><span class="nv">overlay</span><span class="si">}</span><span class="k">)</span>
+<span class="w">        </span>wget<span class="w"> </span><span class="si">${</span><span class="nv">overlay</span><span class="si">}</span><span class="w"> </span>-O<span class="w"> </span>/tmp/<span class="si">${</span><span class="nv">overlay_file</span><span class="si">}</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Extracting </span><span class="si">${</span><span class="nv">overlay</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="w">        </span>tar<span class="w"> </span>xpf<span class="w"> </span>/tmp/<span class="si">${</span><span class="nv">overlay_file</span><span class="si">}</span><span class="w"> </span>--directory<span class="w"> </span><span class="nv">$BASE_PATH</span>
+<span class="w">        </span>rm<span class="w"> </span>-f<span class="w"> </span>/tmp/<span class="si">${</span><span class="nv">overlay_file</span><span class="si">}</span>
 <span class="w">    </span><span class="k">done</span>
 <span class="k">fi</span>
 

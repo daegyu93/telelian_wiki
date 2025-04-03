@@ -75,11 +75,14 @@ if [ -n "${OVERLAY_LINKS}" ]; then
     done
 fi
 
+L4T_PATH=$BASE_PATH/Linux_for_Tegra
+
 echo "Downloading rootfs"
 wget ${ROOTFS_LINK}
-cd Linux_for_Tegra/rootfs
+cd $L4T_PATH/rootfs
 sudo tar xpf ${ROOTFS_FILE}
 
+cd $L4T_PATH
 
 sudo ./apply_binaries.sh
 # sudo ./tools/l4t_create_default_user.sh -u <username> -p <password> -n <hostname> -a --accept-license
@@ -90,7 +93,7 @@ cd $BASE_PATH
 sudo tar xpf l4t_prebuilt.tar.gz
 
 # depmod
-cd $BASE_PATH/Linux_for_Tegra
+cd $L4T_PATH
 sudo ./make_depmod.sh
 
 ```
